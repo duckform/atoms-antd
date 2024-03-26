@@ -4,10 +4,16 @@ import { makeVoidFieldSchema } from "../../basic/field/schema";
 import { formLayoutSchema } from "./schema";
 import { DroppableWidget } from "@duckform/react";
 
-const Preview = (props: React.PropsWithChildren<React.ComponentProps<typeof FormilyFormLayout>>) => {
-  return <DroppableWidget>
-    <FormilyFormLayout {...props}></FormilyFormLayout>
-  </DroppableWidget> 
+const Preview = (
+  props: React.PropsWithChildren<
+    React.ComponentProps<typeof FormilyFormLayout>
+  >,
+) => {
+  return (
+    <DroppableWidget>
+      <FormilyFormLayout {...props}></FormilyFormLayout>
+    </DroppableWidget>
+  );
 };
 
 const Behavior = {
@@ -22,6 +28,7 @@ const Behavior = {
 
 const Resource = {
   icon: "FormLayoutSource",
+  title: "表单布局",
   elements: [
     {
       componentName: "Field",
@@ -36,5 +43,5 @@ const Resource = {
 export const FormLayout = Object.assign(Preview, {
   Behavior,
   Resource,
-  types: ['object', 'void']
+  accepts: ["object", "void"],
 });

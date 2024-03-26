@@ -2,7 +2,7 @@ import { DroppableWidget } from "@duckform/react";
 import type { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { makeFieldSchema } from "../field/schema";
 
-const Preview = DroppableWidget
+const Preview = DroppableWidget;
 
 const Behavior: IBehaviorCreator = {
   name: "Object",
@@ -16,6 +16,7 @@ const Behavior: IBehaviorCreator = {
 
 const Resource: IResourceCreator = {
   icon: "ObjectSource",
+  title: "对象容器",
   elements: [
     {
       componentName: "Field",
@@ -29,5 +30,5 @@ const Resource: IResourceCreator = {
 export const ObjectContainer = Object.assign(Preview, {
   Behavior,
   Resource,
-  types: ['object', 'void']
+  accepts: ["object", "void"],
 });

@@ -26,6 +26,7 @@ const Behavior = [
 const Resource = [
   {
     icon: "InputSource",
+    title: "输入框",
     elements: [
       {
         componentName: "Field",
@@ -40,6 +41,7 @@ const Resource = [
   },
   {
     icon: "TextAreaSource",
+    title: "文本域",
     elements: [
       {
         componentName: "Field",
@@ -57,5 +59,5 @@ const Resource = [
 export const Input = Object.assign(Preview, {
   Behavior,
   Resource,
-  types: ["string", "number"],
+  accepts: ["string", "number"],
 });

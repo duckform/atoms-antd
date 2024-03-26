@@ -1,14 +1,20 @@
 import type { IBehaviorCreator } from "@duckform/core";
-import { DnFC, DroppableWidget, useComponents, useDesigner, useTreeNode } from "@duckform/react";
+import {
+  DnFC,
+  DroppableWidget,
+  useComponents,
+  useDesigner,
+  useTreeNode,
+} from "@duckform/react";
 import {
   ArrayField,
   ISchema,
   Field as InternalField,
   ObjectField,
   VoidField,
-  observer
+  observer,
 } from "@formily/react";
-import { toDesignableFieldProps } from './utils';
+import { toDesignableFieldProps } from "./utils";
 
 const Preview: DnFC<ISchema> = observer((props) => {
   const designer = useDesigner();
@@ -44,9 +50,9 @@ const Preview: DnFC<ISchema> = observer((props) => {
 const Behavior = {
   name: "Field",
   selector: "Field",
-} satisfies IBehaviorCreator
+} satisfies IBehaviorCreator;
 
 export const Field = Object.assign(Preview, {
   Behavior,
-  types: "*" 
-})
+  accepts: "*",
+});
