@@ -9,13 +9,13 @@ export const deps = {
   "@duckform/core": ["DuckForm.Core", null],
   "@duckform/react": ["DuckForm.React", null],
   "@duckform/settings-form": ["DuckForm.SettingsForm", null],
-  "@formily/shared": ["Formiy.Shared", null],
-  "@formily/antd": ["Formiy.Antd", null],
-  "@formily/core": ["Formiy.Core", null],
-  "@formily/json-schema": ["Formiy.JsonSchema", null],
-  "@formily/react": ["Formiy.React", null],
-  "@formily/reactive": ["Formiy.Reactive", null],
-  "@formily/reactive-react": ["Formiy.ReactiveReact", null],
+  "@formily/shared": ["Formily.Shared", null],
+  "@formily/antd": ["Formily.Antd", null],
+  "@formily/core": ["Formily.Core", null],
+  "@formily/json-schema": ["Formily.JsonSchema", null],
+  "@formily/react": ["Formily.React", null],
+  "@formily/reactive": ["Formily.Reactive", null],
+  "@formily/reactive-react": ["Formily.ReactiveReact", null],
 };
 
 export const atoms = ["input"];
