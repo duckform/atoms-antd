@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1-alpha.1",
   "scripts": {
-    "build": "bunx fahter build"
+    "build": "bunx father build"
   },
   "dependencies": {
     "@duckform/core": "beta",
