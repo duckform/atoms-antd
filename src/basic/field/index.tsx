@@ -16,7 +16,7 @@ import {
 } from "@formily/react";
 import { toDesignableFieldProps } from "./utils";
 
-const Preview: DnFC<ISchema> = observer((props) => {
+const PreviewField: DnFC<ISchema> = observer((props) => {
   const designer = useDesigner();
   const components = useComponents();
   const node = useTreeNode();
@@ -52,7 +52,7 @@ const Behavior = {
   selector: "Field",
 } satisfies IBehaviorCreator;
 
-export const Field = Object.assign(Preview, {
+export const Field = Object.assign(PreviewField, {
   Behavior,
   accepts: "*",
 });

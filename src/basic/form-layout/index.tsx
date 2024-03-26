@@ -4,7 +4,7 @@ import { makeVoidFieldSchema } from "../../basic/field/schema";
 import { formLayoutSchema } from "./schema";
 import { DroppableWidget } from "@duckform/react";
 
-const Preview = (
+const PreviewFormLayout = (
   props: React.PropsWithChildren<
     React.ComponentProps<typeof FormilyFormLayout>
   >,
@@ -40,7 +40,7 @@ const Resource = {
   ],
 } satisfies IResourceCreator;
 
-export const FormLayout = Object.assign(Preview, {
+export const FormLayout = Object.assign(PreviewFormLayout, {
   Behavior,
   Resource,
   accepts: ["object", "void"],

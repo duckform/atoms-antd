@@ -5,7 +5,9 @@ import type { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { formSchema } from "./schema";
 import { usePrefix } from "@duckform/react";
 
-const Preview: React.FC<React.ComponentProps<typeof FormilyForm>> = (props) => {
+const PreviewForm: React.FC<React.ComponentProps<typeof FormilyForm>> = (
+  props,
+) => {
   const cls = usePrefix("desinable-form");
 
   const form = useMemo(() => {
@@ -53,7 +55,7 @@ const Resource = {
   ],
 } satisfies IResourceCreator;
 
-export const Form = Object.assign(Preview, {
+export const Form = Object.assign(PreviewForm, {
   Behavior,
   Resource,
 });

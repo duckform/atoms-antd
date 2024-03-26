@@ -12,6 +12,7 @@ export const formSchema: ISchema = {
       properties: formLayoutSchema.properties,
     },
     "form-style-gorup": {
+      title: "表单样式属性",
       type: "void",
       "x-component": "CollapseItem",
       "x-component-props": { defaultExpand: false },
