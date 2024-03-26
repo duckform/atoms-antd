@@ -158,40 +158,7 @@ export const withComponentSchema = (
   component?: ISchema,
   decorator?: ISchema,
 ) => {
-  const schema: ISchema["properties"] = {
-    "component-style-group": {
-      title: "组件样式",
-      type: "void",
-      "x-component": "CollapseItem",
-      "x-component-props": { defaultExpand: false },
-      "x-reactions": {
-        fulfill: {
-          state: {
-            visible: '{{!!$form.values["x-component"]}}',
-          },
-        },
-      },
-      properties: {
-        "x-component-props.style": styleSchema,
-      },
-    },
-    "decorator-style-group": {
-      title: "容器样式",
-      type: "void",
-      "x-component": "CollapseItem",
-      "x-component-props": { defaultExpand: false },
-      "x-reactions": {
-        fulfill: {
-          state: {
-            visible: '{{!!$form.values["x-decorator"]}}',
-          },
-        },
-      },
-      properties: {
-        "x-decorator-props.style": styleSchema,
-      },
-    },
-  };
+  const schema: ISchema["properties"] = {};
   if (component) {
     schema["component-group"] = {
       title: "组件属性",
@@ -227,10 +194,42 @@ export const withComponentSchema = (
       },
     };
   }
+  schema["component-style-group"] = {
+    title: "组件样式",
+    type: "void",
+    "x-component": "CollapseItem",
+    "x-component-props": { defaultExpand: false },
+    "x-reactions": {
+      fulfill: {
+        state: {
+          visible: '{{!!$form.values["x-component"]}}',
+        },
+      },
+    },
+    properties: {
+      "x-component-props.style": styleSchema,
+    },
+  };
+  schema["decorator-style-group"] = {
+    title: "容器样式",
+    type: "void",
+    "x-component": "CollapseItem",
+    "x-component-props": { defaultExpand: false },
+    "x-reactions": {
+      fulfill: {
+        state: {
+          visible: '{{!!$form.values["x-decorator"]}}',
+        },
+      },
+    },
+    properties: {
+      "x-decorator-props.style": styleSchema,
+    },
+  };
   return schema;
 };
 
-export const makeFieldSchema = (
+export const createFieldSchema = (
   component?: ISchema,
   decorator: ISchema = formItemSchema,
 ) => {
@@ -239,6 +238,7 @@ export const makeFieldSchema = (
     properties: {
       "field-group": {
         title: "字段属性",
+        type: "void",
         "x-component": "CollapseItem",
         properties: dataFieldSchema,
       },
@@ -247,7 +247,7 @@ export const makeFieldSchema = (
   } satisfies ISchema;
 };
 
-export const makeVoidFieldSchema = (
+export const createVoidFieldSchema = (
   component: ISchema,
   decorator: ISchema = formItemSchema,
 ) => {
@@ -255,6 +255,7 @@ export const makeVoidFieldSchema = (
     type: "object",
     properties: {
       "field-group": {
+        type: "void",
         title: "字段属性",
         "x-component": "CollapseItem",
         properties: voidFieldSchema,

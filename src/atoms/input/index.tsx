@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Input as FormilyInput } from "@formily/antd";
-import { makeFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic";
 import { inputSchema } from "./schema";
 
 const PreviewInput = FormilyInput;
@@ -11,7 +11,7 @@ const Behavior = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Input",
     designerProps: {
-      propsSchema: makeFieldSchema(inputSchema),
+      propsSchema: createFieldSchema(inputSchema),
     },
   },
   {
@@ -19,7 +19,7 @@ const Behavior = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Input.TextArea",
     designerProps: {
-      propsSchema: makeFieldSchema(inputSchema),
+      propsSchema: createFieldSchema(inputSchema),
     },
   },
 ] satisfies IBehaviorCreator[];

@@ -1,6 +1,6 @@
 import type { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { FormLayout as FormilyFormLayout } from "@formily/antd";
-import { makeVoidFieldSchema } from "../../basic/field/schema";
+import { createVoidFieldSchema } from "../../basic/field/schema";
 import { formLayoutSchema } from "./schema";
 import { DroppableWidget } from "@duckform/react";
 
@@ -22,7 +22,7 @@ const Behavior = {
   selector: (node) => node.props?.["x-component"] === "FormLayout",
   designerProps: {
     droppable: true,
-    propsSchema: makeVoidFieldSchema(formLayoutSchema),
+    propsSchema: createVoidFieldSchema(formLayoutSchema),
   },
 } satisfies IBehaviorCreator;
 

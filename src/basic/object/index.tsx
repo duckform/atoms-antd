@@ -1,6 +1,6 @@
 import { DroppableWidget } from "@duckform/react";
 import type { IBehaviorCreator, IResourceCreator } from "@duckform/core";
-import { makeFieldSchema } from "../field/schema";
+import { createFieldSchema } from "../field/schema";
 
 const PreviewObjectContainer = DroppableWidget;
 
@@ -10,7 +10,7 @@ const Behavior: IBehaviorCreator = {
   selector: (node) => node.props?.["type"] === "object",
   designerProps: {
     droppable: true,
-    propsSchema: makeFieldSchema(),
+    propsSchema: createFieldSchema(),
   },
 };
 
