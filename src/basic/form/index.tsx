@@ -23,7 +23,7 @@ const PreviewForm: React.FC<React.ComponentProps<typeof FormilyForm>> = (
   );
 };
 
-const Behavior = {
+const Behavior: IBehaviorCreator = {
   name: "Form",
   selector: (node) => node.componentName === "Form",
   designerProps(node) {
@@ -39,9 +39,9 @@ const Behavior = {
       },
     };
   },
-} satisfies IBehaviorCreator;
+};
 
-const Resource = {
+const Resource: IResourceCreator = {
   // icon: "",
   title: "表单",
   elements: [
@@ -53,7 +53,7 @@ const Resource = {
       },
     },
   ],
-} satisfies IResourceCreator;
+};
 
 export const Form = Object.assign(PreviewForm, {
   Behavior,

@@ -12,8 +12,9 @@
     "useDefineForClassFields": true,
     "baseUrl": ".",
     "paths": {
-      "@basic": ["./src/basic"]
+      "@basic": ["./src/basic"],
+      "@atoms": ["./src/index"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "playground"]
 }

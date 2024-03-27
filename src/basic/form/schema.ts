@@ -2,7 +2,7 @@ import type { ISchema } from "@formily/react";
 import { styleSchema } from "../style/schema";
 import { formLayoutSchema } from "../form-layout/schema";
 
-export const formSchema: ISchema = {
+export const formSchema = {
   type: "object",
   properties: {
     "form-layout-gorup": {

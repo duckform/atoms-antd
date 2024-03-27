@@ -16,7 +16,7 @@ const PreviewFormLayout = (
   );
 };
 
-const Behavior = {
+const Behavior: IBehaviorCreator = {
   name: "FormLayout",
   extends: ["Field"],
   selector: (node) => node.props?.["x-component"] === "FormLayout",
@@ -24,9 +24,9 @@ const Behavior = {
     droppable: true,
     propsSchema: createVoidFieldSchema(formLayoutSchema),
   },
-} satisfies IBehaviorCreator;
+};
 
-const Resource = {
+const Resource: IResourceCreator = {
   icon: "FormLayoutSource",
   title: "表单布局",
   elements: [
@@ -38,7 +38,7 @@ const Resource = {
       },
     },
   ],
-} satisfies IResourceCreator;
+};
 
 export const FormLayout = Object.assign(PreviewFormLayout, {
   Behavior,

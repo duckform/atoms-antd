@@ -233,7 +233,7 @@ export const createFieldSchema = (
   component?: ISchema,
   decorator: ISchema = formItemSchema,
 ) => {
-  return {
+  const schema = {
     type: "object",
     properties: {
       "field-group": {
@@ -245,13 +245,14 @@ export const createFieldSchema = (
       ...withComponentSchema(component, decorator),
     },
   } satisfies ISchema;
+  return schema;
 };
 
 export const createVoidFieldSchema = (
   component: ISchema,
   decorator: ISchema = formItemSchema,
 ) => {
-  return {
+  const schema = {
     type: "object",
     properties: {
       "field-group": {
@@ -263,9 +264,10 @@ export const createVoidFieldSchema = (
       ...withComponentSchema(component, decorator),
     },
   } satisfies ISchema;
+  return schema;
 };
 
-export const formItemSchema: ISchema = {
+export const formItemSchema = {
   type: "object",
   properties: {
     tooltip: {

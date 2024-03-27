@@ -34,4 +34,4 @@ export const inputSchema: ISchema = {
       "x-component": "Input",
     },
   },
-} satisfies ISchema;
+};

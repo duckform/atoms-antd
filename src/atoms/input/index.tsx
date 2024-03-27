@@ -5,7 +5,7 @@ import { inputSchema } from "./schema";
 
 const PreviewInput = FormilyInput;
 
-const Behavior = [
+const Behavior: IBehaviorCreator[] = [
   {
     name: "Input",
     extends: ["Field"],
@@ -22,9 +22,9 @@ const Behavior = [
       propsSchema: createFieldSchema(inputSchema),
     },
   },
-] satisfies IBehaviorCreator[];
+];
 
-const Resource = [
+const Resource: IResourceCreator[] = [
   {
     icon: "InputSource",
     title: "输入框",
@@ -55,7 +55,7 @@ const Resource = [
       },
     ],
   },
-] satisfies IResourceCreator[];
+];
 
 export const Input = Object.assign(PreviewInput, {
   Behavior,

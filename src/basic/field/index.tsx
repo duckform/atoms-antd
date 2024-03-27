@@ -47,10 +47,10 @@ const PreviewField: DnFC<ISchema> = observer((props) => {
   return <InternalField {...fieldProps} name={node.id} />;
 });
 
-const Behavior = {
+const Behavior: IBehaviorCreator = {
   name: "Field",
   selector: "Field",
-} satisfies IBehaviorCreator;
+};
 
 export const Field = Object.assign(PreviewField, {
   Behavior,

@@ -2,6 +2,7 @@
   "name": "@duckform/atoms-antd",
   "version": "0.0.1-alpha.8",
   "scripts": {
+    "dev": "npx rsbuild dev",
     "build": "bunx father build"
   },
   "files": ["dist"],
@@ -18,9 +19,8 @@
   },
   "homepage": "https://github.com/duckform/atoms-antd#readme",
   "dependencies": {
-    "@duckform/core": "beta",
-    "@duckform/react": "beta",
-    "@duckform/settings-form": "beta",
+    "@duckform/core": "0.1.0-alpha.2",
+    "@duckform/react": "0.1.0-alpha.2",
     "@formily/antd": "^2.3.1",
     "@formily/core": "^2.3.1",
     "@formily/react": "^2.3.1",
@@ -29,6 +29,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@rsbuild/core": "^0.5.2",
+    "@rsbuild/plugin-react": "0.5.2",
     "@types/react": "^18.2.69",
     "@types/react-dom": "^18.2.22",
     "father": "^4.4.0",
