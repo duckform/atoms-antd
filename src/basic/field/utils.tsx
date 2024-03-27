@@ -1,9 +1,7 @@
-import { isArr, isStr } from "@duckform/shared";
+import { isArr, isStr } from "@duckform/core/shared";
 import { FormItem } from "@formily/antd";
 import { FormPath } from "@formily/core";
-import {
-  ISchema
-} from "@formily/react";
+import { ISchema } from "@formily/react";
 import { toJS } from "@formily/reactive";
 import { each, reduce } from "@formily/shared";
 
