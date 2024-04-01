@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/duckform/atoms-antd#readme",
   "dependencies": {
-    "@duckform/core": "0.1.0-alpha.2",
-    "@duckform/react": "0.1.0-alpha.2",
+    "@duckform/core": "0.1.0-alpha.9",
+    "@duckform/react": "0.1.0-alpha.9",
     "@formily/antd": "^2.3.1",
     "@formily/core": "^2.3.1",
     "@formily/react": "^2.3.1",

@@ -1,29 +1,26 @@
-# Rsbuild Project
+# DuckForm Atoms of Antd
 
-## Setup
+> DuckForm 原子集合
 
-Install the dependencies:
+## 如何定义原子集合?
 
-```bash
-pnpm install
-```
+适配 Duckform 的组件集合, 由两部分组成
 
-## Get Started
+## Basic 基础
 
-Start the dev server:
+- Field 基础字段容器
+- Form 基础表单容器
+- FormLayout 表单布局容器
+- Object 对象容器
+- style 基本样式
 
-```bash
-pnpm dev
-```
+## Atoms 原子组件
 
-Build the app for production:
+原子性组件, 基础结构如下
 
-```bash
-pnpm build
-```
-
-Preview the production build locally:
-
-```bash
-pnpm preview
-```
+- Preview
+- Behaviors
+- Resources
+- accepts
+- Transformer
+- DisplayName
