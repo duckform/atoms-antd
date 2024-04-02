@@ -1,6 +1,18 @@
+import { createBehavior, createResource } from "@duckform/core";
 import { Field, Form, FormLayout, ObjectContainer } from "./basic";
 import { Input } from "./atoms/input";
-import { createBehavior, createResource } from "@duckform/core";
+import { Password } from './atoms/password';
+import { NumberPicker } from './atoms/numberPicker';
+import { Radio } from "./atoms/radio";
+import { Checkbox } from "./atoms/checkbox";
+import { Select } from "./atoms/select";
+import { Rate } from "./atoms/rate";
+import { Slider } from "./atoms/slider";
+import { TreeSelect } from "./atoms/treeSelect";
+import { Transfer } from "./atoms/transfer";
+import { DatePicker } from "./atoms/datePicker";
+import { TimePicker } from "./atoms/timePicker";
+
 
 const genComp = (Comp: any): any => {
   if (Comp.Resource) {
@@ -22,4 +34,15 @@ export const Preset = {
   FormLayout: genComp(FormLayout),
   ObjectContainer: genComp(ObjectContainer),
   Input: genComp(Input),
+  Password: genComp(Password),
+  NumberPicker: genComp(NumberPicker),
+  Radio: genComp(Radio),
+  Checkbox: genComp(Checkbox),
+  Select: genComp(Select),
+  Rate: genComp(Rate),
+  Slider: genComp(Slider),
+  TreeSelect: genComp(TreeSelect),
+  Transfer: genComp(Transfer),
+  DatePicker: genComp(DatePicker),
+  TimePicker: genComp(TimePicker),
 };

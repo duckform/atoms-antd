@@ -24,9 +24,7 @@ import {
 import { SettingsForm, setNpmCDNRegistry } from "@duckform/react/settings-form";
 import "antd/dist/antd.less";
 import React, { useMemo } from "react";
-
 import { Preset } from "@atoms";
-const { Field, Form, FormLayout, Input, ObjectContainer } = Preset;
 import { saveSchema } from "./utils";
 import {
   ActionsWidget,
@@ -37,6 +35,25 @@ import {
 } from "./widgets";
 
 // setNpmCDNRegistry("//unpkg.com");
+
+const {
+  Field,
+  Form,
+  FormLayout,
+  Input,
+  Password,
+  ObjectContainer,
+  NumberPicker,
+  Radio,
+  Checkbox,
+  Select,
+  Rate,
+  Slider,
+  TreeSelect,
+  Transfer,
+  DatePicker,
+  TimePicker,
+} = Preset;
 
 GlobalRegistry.registerDesignerLocales({
   "zh-CN": {
@@ -83,7 +100,22 @@ export const App = () => {
           <CompositePanel.Item title="panels.Component" icon="Component">
             <ResourceWidget
               title="sources.Inputs"
-              sources={[ObjectContainer, FormLayout, Input]}
+              sources={[
+                ObjectContainer,
+                FormLayout,
+                Input,
+                Password,
+                NumberPicker,
+                Radio,
+                Checkbox,
+                Select,
+                Rate,
+                Slider,
+                TreeSelect,
+                Transfer,
+                DatePicker,
+                TimePicker,
+              ]}
             />
           </CompositePanel.Item>
           <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
@@ -111,6 +143,17 @@ export const App = () => {
                       ObjectContainer,
                       FormLayout,
                       Input,
+                      Password,
+                      NumberPicker,
+                      Radio,
+                      Checkbox,
+                      Select,
+                      Rate,
+                      Slider,
+                      TreeSelect,
+                      Transfer,
+                      DatePicker,
+                      TimePicker,
                     }}
                   />
                 )}
