@@ -18,7 +18,6 @@ const Behavior: IBehaviorCreator[] = [
 
 const Resource: IResourceCreator[] = [
   {
-    icon: "NumberPickerSource",
     title: "数字输入",
     elements: [
       {

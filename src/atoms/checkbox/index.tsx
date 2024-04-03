@@ -18,7 +18,6 @@ const Behavior: IBehaviorCreator[] = [
 
 const Resource: IResourceCreator[] = [
   {
-    icon: "CheckboxGroupSource",
     title: "复选框",
     elements: [
       {

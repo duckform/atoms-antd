@@ -26,7 +26,6 @@ const Behavior: IBehaviorCreator[] = [
 
 const Resource: IResourceCreator[] = [
   {
-    icon: "DatePickerSource",
     title: "日期选择",
     elements: [
       {
@@ -41,7 +40,6 @@ const Resource: IResourceCreator[] = [
     ],
   },
   {
-    icon: "DateRangePickerSource",
     title: "日期范围",
     elements: [
       {

@@ -18,7 +18,6 @@ const Behavior: IBehaviorCreator[] = [
 
 const Resource: IResourceCreator[] = [
   {
-    icon: "PasswordSource",
     title: "密码输入",
     elements: [
       {

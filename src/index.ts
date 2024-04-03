@@ -12,6 +12,9 @@ import { TreeSelect } from "./atoms/treeSelect";
 import { Transfer } from "./atoms/transfer";
 import { DatePicker } from "./atoms/datePicker";
 import { TimePicker } from "./atoms/timePicker";
+import { Upload } from "./atoms/upload";
+import { Cascader } from "./atoms/cascader";
+import { Switch } from "./atoms/switch";
 
 
 const genComp = (Comp: any): any => {
@@ -45,4 +48,7 @@ export const Preset = {
   Transfer: genComp(Transfer),
   DatePicker: genComp(DatePicker),
   TimePicker: genComp(TimePicker),
+  Upload: genComp(Upload),
+  Cascader: genComp(Cascader),
+  Switch: genComp(Switch),
 };

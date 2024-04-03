@@ -26,7 +26,6 @@ const Behavior: IBehaviorCreator[] = [
 
 const Resource: IResourceCreator[] = [
   {
-    icon: "InputSource",
     title: "输入框",
     elements: [
       {
@@ -41,7 +40,6 @@ const Resource: IResourceCreator[] = [
     ],
   },
   {
-    icon: "TextAreaSource",
     title: "文本域",
     elements: [
       {

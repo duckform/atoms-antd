@@ -18,7 +18,6 @@ const Behavior: IBehaviorCreator[] = [
 
 const Resource: IResourceCreator[] = [
   {
-    icon: "SliderSource",
     title: "滑动条",
     elements: [
       {

@@ -4,12 +4,6 @@ import { composeEnum } from "../../utils";
 export const radioSchema: ISchema = {
   type: 'object',
   properties: {
-    autoFocus: {
-      type: 'boolean',
-      title: "自动获取焦点",
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
     optionType: {
       type: 'string',
       title: "选项类型",

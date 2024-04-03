@@ -1,7 +1,7 @@
 import type { ISchema } from "@formily/react";
 import { composeEnum } from "../../utils";
 
-export const CommonTimePickerAPI = {
+const CommonDatePickerAPI = {
   allowClear: {
     type: "boolean",
     title: "允许清除内容",
@@ -26,86 +26,33 @@ export const CommonTimePickerAPI = {
       defaultChecked: true,
     },
   },
-  clearText: {
-    type: "string",
-    title: "清除提示",
-    "x-decorator": "FormItem",
-    "x-component": "Input",
-  },
-  disabledHours: {
-    title: "禁止小时",
+  disabledTime: {
+    title: "不可选时间",
     "x-decorator": "FormItem",
     "x-component": "ValueInput",
     "x-component-props": {
       include: ["EXPRESSION"],
     },
+    "x-decorator-props": {
+      tooltip: "格式 (currentDate: moment) => boolean",
+    },
   },
-  disabledMinutes: {
-    title: "禁止分钟",
+  disabledDate: {
+    title: "不可选日期",
     "x-decorator": "FormItem",
     "x-component": "ValueInput",
     "x-component-props": {
       include: ["EXPRESSION"],
     },
-  },
-  disabledSeconds: {
-    title: "禁止秒",
-    "x-decorator": "FormItem",
-    "x-component": "ValueInput",
-    "x-component-props": {
-      include: ["EXPRESSION"],
+    "x-decorator-props": {
+      tooltip: "格式 (currentDate: moment) => boolean",
     },
-  },
-  hideDisabledOptions: {
-    type: "boolean",
-    title: "隐藏禁止选项",
-    "x-decorator": "FormItem",
-    "x-component": "Switch",
   },
   inputReadOnly: {
     type: "boolean",
     title: "输入框只读",
     "x-decorator": "FormItem",
     "x-component": "Switch",
-  },
-  showNow: {
-    type: "boolean",
-    title: "显示此刻",
-    "x-decorator": "FormItem",
-    "x-component": "Switch",
-  },
-  use12Hours: {
-    type: "boolean",
-    title: "12小时制",
-    "x-decorator": "FormItem",
-    "x-component": "Switch",
-  },
-  hourStep: {
-    type: "number",
-    title: "小时间隔",
-    "x-decorator": "FormItem",
-    "x-component": "NumberPicker",
-    "x-component-props": {
-      defaultValue: 1,
-    },
-  },
-  minuteStep: {
-    type: "number",
-    title: "分钟间隔",
-    "x-decorator": "FormItem",
-    "x-component": "NumberPicker",
-    "x-component-props": {
-      defaultValue: 1,
-    },
-  },
-  secondStep: {
-    type: "number",
-    title: "秒间隔",
-    "x-decorator": "FormItem",
-    "x-component": "NumberPicker",
-    "x-component-props": {
-      defaultValue: 1,
-    },
   },
   placeholder: {
     type: "string",
@@ -122,6 +69,9 @@ export const CommonTimePickerAPI = {
     ),
     "x-decorator": "FormItem",
     "x-component": "Select",
+    "x-component-props": {
+      defaultValue: "middle",
+    },
   },
   format: {
     type: "string",
@@ -134,12 +84,66 @@ export const CommonTimePickerAPI = {
   },
 };
 
-export const timePickerSchema: ISchema & { RangePicker?: ISchema } = {
+export const datePickerSchema: ISchema & { RangePicker?: ISchema } = {
   type: "object",
-  properties: CommonTimePickerAPI as any,
+  properties: {
+    picker: {
+      type: "string",
+      title: "选择器类型",
+      enum: composeEnum(
+        ["time", "date", "month", "year", "quarter", "decade"],
+        ["时间", "日期", "月份", "年", "季度", "财年"]
+      ),
+      "x-decorator": "FormItem",
+      "x-component": "Select",
+      "x-component-props": {
+        defaultValue: "date",
+      },
+    },
+    ...(CommonDatePickerAPI as any),
+    showNow: {
+      type: "boolean",
+      title: "显示此刻",
+      "x-decorator": "FormItem",
+      "x-component": "Switch",
+    },
+    showTime: {
+      type: "boolean",
+      title: "时间选择",
+      "x-decorator": "FormItem",
+      "x-component": "Switch",
+    },
+    showToday: {
+      type: "boolean",
+      title: "显示今天",
+      "x-decorator": "FormItem",
+      "x-component": "Switch",
+    },
+  },
 };
 
-export const timeRangePickerSchema = {
+export const dateRangePickerSchema = {
   type: "object",
-  properties: CommonTimePickerAPI as any,
+  properties: {
+    picker: {
+      type: "string",
+      title: "选择器类型",
+      enum: composeEnum(
+        ["time", "date", "month", "year", "decade"],
+        ["时间", "日期", "月份", "年", "财年"]
+      ),
+      "x-decorator": "FormItem",
+      "x-component": "Select",
+      "x-component-props": {
+        defaultValue: "date",
+      },
+    },
+    ...(CommonDatePickerAPI as any),
+    showTime: {
+      type: "boolean",
+      title: "时间选择",
+      "x-decorator": "FormItem",
+      "x-component": "Switch",
+    },
+  },
 };

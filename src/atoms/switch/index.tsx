@@ -1,40 +1,41 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
-import { Select as FormilySelect } from "@formily/antd";
+import { Switch as AntdSwitch } from "antd";
 import { createFieldSchema } from "@basic";
-import { selectSchema } from "./schema";
+import { checkboxSchema } from "./schema";
 
-const PreviewSelect = FormilySelect;
+const PreviewSwitch = AntdSwitch;
 
 const Behavior: IBehaviorCreator[] = [
   {
-    name: "Select",
+    name: "Switch",
     extends: ["Field"],
-    selector: (node) => node.props?.["x-component"] === "Select",
+    selector: (node) => node.props?.["x-component"] === "Switch",
     designerProps: {
-      propsSchema: createFieldSchema(selectSchema),
+      propsSchema: createFieldSchema(checkboxSchema),
     },
   },
 ];
 
 const Resource: IResourceCreator[] = [
   {
-    title: "选择框",
+    title: "开关",
     elements: [
       {
         componentName: "Field",
         props: {
-          title: "Select",
+          type: "boolean",
+          title: "Switch",
           "x-decorator": "FormItem",
-          "x-component": "Select",
+          "x-component": "Switch",
         },
       },
     ],
   },
 ];
 
-export const Select = Object.assign(PreviewSelect, {
+export const Switch = Object.assign(PreviewSwitch, {
   Behavior,
   Resource,
-  accepts: ["string", "number"],
+  accepts: ["boolean"],
   transform: () => { }
 });

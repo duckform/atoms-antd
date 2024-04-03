@@ -18,7 +18,6 @@ const Behavior: IBehaviorCreator[] = [
 
 const Resource: IResourceCreator[] = [
   {
-    icon: "TreeSelectSource",
     title: "树选择",
     elements: [
       {

@@ -1,5 +1,5 @@
 import {
-  GlobalRegistry,
+  // GlobalRegistry,
   KeyCode,
   Shortcut,
   createDesigner,
@@ -53,26 +53,21 @@ const {
   Transfer,
   DatePicker,
   TimePicker,
+  Upload,
+  Cascader,
+  Switch,
 } = Preset;
 
-GlobalRegistry.registerDesignerLocales({
-  "zh-CN": {
-    sources: {
-      Inputs: "输入控件",
-      Layouts: "布局组件",
-      Arrays: "自增组件",
-      Displays: "展示组件",
-    },
-  },
-  "en-US": {
-    sources: {
-      Inputs: "Inputs",
-      Layouts: "Layouts",
-      Arrays: "Arrays",
-      Displays: "Displays",
-    },
-  },
-});
+// GlobalRegistry.registerDesignerLocales({
+//   "zh-CN": {
+//     sources: {
+//       Inputs: "输入控件",
+//       Layouts: "布局组件",
+//       Arrays: "自增组件",
+//       Displays: "展示组件",
+//     },
+//   },
+// });
 
 export const App = () => {
   const engine = useMemo(
@@ -99,22 +94,30 @@ export const App = () => {
         <CompositePanel>
           <CompositePanel.Item title="panels.Component" icon="Component">
             <ResourceWidget
-              title="sources.Inputs"
+              title="输入控件"
               sources={[
-                ObjectContainer,
-                FormLayout,
                 Input,
                 Password,
                 NumberPicker,
                 Radio,
                 Checkbox,
+                Switch,
                 Select,
-                Rate,
-                Slider,
                 TreeSelect,
+                Cascader,
                 Transfer,
                 DatePicker,
                 TimePicker,
+                Upload,
+                Rate,
+                Slider,
+                ObjectContainer,
+              ]}
+            />
+            <ResourceWidget
+              title="布局组件"
+              sources={[
+                FormLayout,
               ]}
             />
           </CompositePanel.Item>
@@ -154,6 +157,9 @@ export const App = () => {
                       Transfer,
                       DatePicker,
                       TimePicker,
+                      Upload,
+                      Cascader,
+                      Switch,
                     }}
                   />
                 )}

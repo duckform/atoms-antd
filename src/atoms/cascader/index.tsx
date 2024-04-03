@@ -1,40 +1,40 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
-import { Select as FormilySelect } from "@formily/antd";
+import { Cascader as FormilyCascader } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { selectSchema } from "./schema";
+import { cascaderSchema } from "./schema";
 
-const PreviewSelect = FormilySelect;
+const PreviewCascader = FormilyCascader;
 
 const Behavior: IBehaviorCreator[] = [
   {
-    name: "Select",
+    name: "Cascader",
     extends: ["Field"],
-    selector: (node) => node.props?.["x-component"] === "Select",
+    selector: (node) => node.props?.["x-component"] === "Cascader",
     designerProps: {
-      propsSchema: createFieldSchema(selectSchema),
+      propsSchema: createFieldSchema(cascaderSchema),
     },
   },
 ];
 
 const Resource: IResourceCreator[] = [
   {
-    title: "选择框",
+    title: "联级选择",
     elements: [
       {
         componentName: "Field",
         props: {
-          title: "Select",
+          title: "Cascader",
           "x-decorator": "FormItem",
-          "x-component": "Select",
+          "x-component": "Cascader",
         },
       },
     ],
   },
 ];
 
-export const Select = Object.assign(PreviewSelect, {
+export const Cascader = Object.assign(PreviewCascader, {
   Behavior,
   Resource,
-  accepts: ["string", "number"],
+  accepts: [],
   transform: () => { }
 });

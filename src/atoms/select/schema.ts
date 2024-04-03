@@ -4,12 +4,12 @@ import { composeEnum } from '../../utils';
 export const selectSchema: ISchema = {
   type: 'object',
   properties: {
-    enum: {
-      type: "string",
-      title: "可选项",
-      "x-decorator": "FormItem",
-      "x-component": "ValueInput",
-    },
+    // enum: {
+    //   type: "string",
+    //   title: "可选项",
+    //   "x-decorator": "FormItem",
+    //   "x-component": "ValueInput",
+    // },
     mode: {
       type: "string",
       title: "模式",

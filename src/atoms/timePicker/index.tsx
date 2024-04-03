@@ -26,7 +26,6 @@ const Behavior: IBehaviorCreator[] = [
 
 const Resource: IResourceCreator[] = [
   {
-    icon: "TimePickerSource",
     title: "时间选择",
     elements: [
       {
@@ -41,7 +40,6 @@ const Resource: IResourceCreator[] = [
     ],
   },
   {
-    icon: "TimeRangePickerSource",
     title: "时间范围",
     elements: [
       {
