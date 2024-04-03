@@ -1,5 +1,5 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from "src/utils";
+import { composeEnum } from "../../utils/composeEnum";
 
 export const checkboxSchema: ISchema = {
   type: 'object',

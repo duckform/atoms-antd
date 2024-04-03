@@ -1,5 +1,5 @@
 import type { ISchema } from "@formily/react";
-import { composeEnum } from "../../utils";
+import { composeEnum } from "../../utils/composeEnum";
 
 const CommonDatePickerAPI = {
   allowClear: {

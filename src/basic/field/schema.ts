@@ -1,5 +1,5 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from "../../utils";
+import { composeEnum } from "../../utils/composeEnum";
 import { formLayoutSchema } from "../form-layout/schema";
 import { styleSchema } from "../style/schema";
 

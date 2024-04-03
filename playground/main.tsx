@@ -56,6 +56,11 @@ const {
   Upload,
   Cascader,
   Switch,
+  Card,
+  FormGrid,
+  FormTab,
+  FormCollapse,
+  Space,
 } = Preset;
 
 // GlobalRegistry.registerDesignerLocales({
@@ -117,7 +122,12 @@ export const App = () => {
             <ResourceWidget
               title="布局组件"
               sources={[
+                Card,
+                FormGrid,
+                FormTab,
                 FormLayout,
+                FormCollapse,
+                Space,
               ]}
             />
           </CompositePanel.Item>
@@ -160,6 +170,11 @@ export const App = () => {
                       Upload,
                       Cascader,
                       Switch,
+                      Card,
+                      FormGrid,
+                      FormTab,
+                      FormCollapse,
+                      Space
                     }}
                   />
                 )}

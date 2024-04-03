@@ -1,5 +1,5 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from "../../utils";
+import { composeEnum } from "../../utils/composeEnum";
 
 export const cascaderSchema: ISchema = {
   type: "object",

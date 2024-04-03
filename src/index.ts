@@ -1,5 +1,5 @@
 import { createBehavior, createResource } from "@duckform/core";
-import { Field, Form, FormLayout, ObjectContainer } from "./basic";
+import { Field, Form, FormLayout, ObjectContainer, FormGrid, FormTab, FormCollapse } from "./basic";
 import { Input } from "./atoms/input";
 import { Password } from './atoms/password';
 import { NumberPicker } from './atoms/numberPicker';
@@ -15,7 +15,8 @@ import { TimePicker } from "./atoms/timePicker";
 import { Upload } from "./atoms/upload";
 import { Cascader } from "./atoms/cascader";
 import { Switch } from "./atoms/switch";
-
+import { Card } from "./atoms/card";
+import { Space } from "./atoms/space";
 
 const genComp = (Comp: any): any => {
   if (Comp.Resource) {
@@ -35,6 +36,8 @@ export const Preset = {
   Field: genComp(Field),
   Form: genComp(Form),
   FormLayout: genComp(FormLayout),
+  FormGrid: genComp(FormGrid),
+  FormTab: genComp(FormTab),
   ObjectContainer: genComp(ObjectContainer),
   Input: genComp(Input),
   Password: genComp(Password),
@@ -51,4 +54,7 @@ export const Preset = {
   Upload: genComp(Upload),
   Cascader: genComp(Cascader),
   Switch: genComp(Switch),
+  FormCollapse: genComp(FormCollapse),
+  Card: genComp(Card),
+  Space: genComp(Space),
 };
