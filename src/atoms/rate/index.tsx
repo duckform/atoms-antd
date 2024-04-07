@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Rate as AntdRate } from "antd";
 import { createFieldSchema } from "@basic";
-import { rateSchema } from "./schema";
+import { RateSchema } from "./schema";
 
 const PreviewRate = AntdRate;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Rate",
     designerProps: {
-      propsSchema: createFieldSchema(rateSchema),
+      propsSchema: createFieldSchema(RateSchema),
     },
   },
 ];

@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Slider as AntdSlider } from "antd";
 import { createFieldSchema } from "@basic";
-import { sliderSchema } from "./schema";
+import { SliderSchema } from "./schema";
 
 const PreviewSlider = AntdSlider;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Slider",
     designerProps: {
-      propsSchema: createFieldSchema(sliderSchema),
+      propsSchema: createFieldSchema(SliderSchema),
     },
   },
 ];
