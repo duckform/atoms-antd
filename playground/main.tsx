@@ -65,6 +65,8 @@ const {
   ArrayTable,
   ArrayCards,
   FormStep,
+  ShadowModal,
+  ProArrayTable,
 } = Preset;
 
 
@@ -92,6 +94,10 @@ export const App = () => {
       <StudioPanel logo={<LogoWidget />} actions={<ActionsWidget />}>
         <CompositePanel>
           <CompositePanel.Item title="panels.Component" icon="Component">
+            <ResourceWidget
+              title="Pro"
+              sources={[ShadowModal, ProArrayTable]}
+            />
             <ResourceWidget
               title="输入控件"
               sources={[
@@ -130,7 +136,6 @@ export const App = () => {
               sources={[ArrayCards, ArrayTable]}
             />
           </CompositePanel.Item>
-
           <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
             <OutlineTreeWidget />
           </CompositePanel.Item>
@@ -179,6 +184,8 @@ export const App = () => {
                       Button,
                       ArrayTable,
                       ArrayCards,
+                      ProArrayTable,
+                      ShadowModal,
                     }}
                   />
                 )}
