@@ -126,7 +126,6 @@ const PreviewFormStep: DnFC<StepsProps> & {
             onClick: () => {
               const stepPane = new TreeNode({
                 componentName: "Field",
-                resourceName: '选项卡面板',
                 props: {
                   type: "void",
                   "x-component": "FormStep.StepPane",
@@ -138,6 +137,7 @@ const PreviewFormStep: DnFC<StepsProps> & {
                   {
                     id: uid(),
                     componentName: "Field",
+                    resourceName: '分步面板',
                     props: {
                       type: "object",
                     },
@@ -231,7 +231,6 @@ const Resource: IResourceCreator[] = [{
   elements: [
     {
       componentName: "Field",
-      sourceName: "分步表单",
       props: {
         type: "void",
       },
@@ -239,6 +238,7 @@ const Resource: IResourceCreator[] = [{
         {
           id: uid(),
           componentName: "Field",
+          resourceName: '分步面板',
           props: {
             type: "void",
             "x-component": "FormStep",
@@ -250,7 +250,7 @@ const Resource: IResourceCreator[] = [{
         {
           id: uid(),
           componentName: "Field",
-          sourceName: "弹性间距",
+          resourceName: '弹性间距',
           props: {
             type: "void",
             "x-component": "Space",

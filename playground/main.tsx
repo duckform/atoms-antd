@@ -64,19 +64,9 @@ const {
   Space,
   ArrayTable,
   ArrayCards,
-  // FormStep,
+  FormStep,
 } = Preset;
 
-// GlobalRegistry.registerDesignerLocales({
-//   "zh-CN": {
-//     sources: {
-//       Inputs: "输入控件",
-//       Layouts: "布局组件",
-//       Arrays: "自增组件",
-//       Displays: "展示组件",
-//     },
-//   },
-// });
 
 export const App = () => {
   const engine = useMemo(
@@ -129,7 +119,7 @@ export const App = () => {
                 Card,
                 FormGrid,
                 FormTab,
-                // FormStep,
+                FormStep,
                 FormLayout,
                 FormCollapse,
                 Space,
@@ -185,7 +175,7 @@ export const App = () => {
                       FormTab,
                       FormCollapse,
                       Space,
-                      // FormStep,
+                      FormStep,
                       Button,
                       ArrayTable,
                       ArrayCards,

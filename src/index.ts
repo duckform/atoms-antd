@@ -59,6 +59,5 @@ export const Preset = {
   Space: genComp(Space),
   ArrayTable: genComp(ArrayTable),
   ArrayCards: genComp(ArrayCards),
-
-  // FormStep: genComp(FormStep),
+  FormStep: genComp(FormStep),
 };
