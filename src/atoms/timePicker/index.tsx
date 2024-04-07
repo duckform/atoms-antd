@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { TimePicker as FormilyTimePicker } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { timePickerSchema, timeRangePickerSchema } from "./schema";
+import { TimePickerSchema } from "./schema";
 
 const PreviewTimePicker = FormilyTimePicker;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "TimePicker",
     designerProps: {
-      propsSchema: createFieldSchema(timePickerSchema),
+      propsSchema: createFieldSchema(TimePickerSchema),
     },
   },
   {
@@ -19,7 +19,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "TimePicker.RangePicker",
     designerProps: {
-      propsSchema: createFieldSchema(timeRangePickerSchema),
+      propsSchema: createFieldSchema(TimePickerSchema.RangePicker),
     },
   },
 ];

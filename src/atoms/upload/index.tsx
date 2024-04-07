@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Upload as FormilyUpload } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { uploadSchema, uploadDraggerSchema } from "./schema";
+import { UploadSchema } from "./schema";
 
 const PreviewUpload = FormilyUpload;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Upload",
     designerProps: {
-      propsSchema: createFieldSchema(uploadSchema),
+      propsSchema: createFieldSchema(UploadSchema),
     },
   },
   {
@@ -19,7 +19,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Upload.Dragger",
     designerProps: {
-      propsSchema: createFieldSchema(uploadDraggerSchema),
+      propsSchema: createFieldSchema(UploadSchema.Dragger),
     },
   },
 ];

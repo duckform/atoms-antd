@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Password as FormilyPassword } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { passwordSchema } from "./schema";
+import { PasswordSchema } from "./schema";
 
 const PreviewPassword = FormilyPassword;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Password",
     designerProps: {
-      propsSchema: createFieldSchema(passwordSchema),
+      propsSchema: createFieldSchema(PasswordSchema),
     },
   },
 ];

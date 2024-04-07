@@ -1,6 +1,6 @@
 import { ISchema } from '@formily/react'
 
-export const formGridSchema: ISchema = {
+export const FormGridSchema: ISchema & { GridColumn?: ISchema } = {
   type: 'object',
   properties: {
     minWidth: {
@@ -72,7 +72,7 @@ export const formGridSchema: ISchema = {
   },
 }
 
-export const formGridColumnSchema = {
+FormGridSchema.GridColumn = {
   type: 'object',
   properties: {
     gridSpan: {

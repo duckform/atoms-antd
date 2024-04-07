@@ -1,10 +1,10 @@
 import { ISchema } from "@formily/react";
-import { inputSchema } from "../input/schema";
+import { InputSchema } from "../input/schema";
 
-export const passwordSchema: ISchema = {
+export const PasswordSchema: ISchema = {
   type: "object",
   properties: {
-    ...(inputSchema.properties as any),
+    ...(InputSchema.properties as any),
     checkStrength: {
       type: "boolean",
       title: "检测强度",

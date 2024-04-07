@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Switch as AntdSwitch } from "antd";
 import { createFieldSchema } from "@basic";
-import { checkboxSchema } from "./schema";
+import { SwitchSchema } from "./schema";
 
 const PreviewSwitch = AntdSwitch;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Switch",
     designerProps: {
-      propsSchema: createFieldSchema(checkboxSchema),
+      propsSchema: createFieldSchema(SwitchSchema),
     },
   },
 ];

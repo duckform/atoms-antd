@@ -1,7 +1,7 @@
 import { ISchema } from '@formily/react'
 import { composeEnum } from '../../utils/composeEnum';
 
-export const formTabSchema: ISchema = {
+export const FormTabSchema: ISchema & { TabPane?: ISchema } = {
   type: "object",
   properties: {
     animated: {
@@ -46,7 +46,7 @@ export const formTabSchema: ISchema = {
   },
 };
 
-export const formTabPaneSchema: ISchema = {
+FormTabSchema.TabPane = {
   type: "object",
   properties: {
     tab: {

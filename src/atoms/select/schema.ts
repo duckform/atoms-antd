@@ -1,7 +1,7 @@
 import { ISchema } from "@formily/react";
 import { composeEnum } from '../../utils/composeEnum';
 
-export const selectSchema: ISchema = {
+export const SelectSchema: ISchema = {
   type: 'object',
   properties: {
     // enum: {

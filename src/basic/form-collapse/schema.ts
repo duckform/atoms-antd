@@ -1,7 +1,7 @@
 import { ISchema } from '@formily/react'
 import { composeEnum } from '../../utils/composeEnum';
 
-export const formCollapseSchema: ISchema = {
+export const FormCollapseSchema: ISchema & { CollapsePanel?: ISchema } = {
   type: 'object',
   properties: {
     accordion: {
@@ -42,7 +42,7 @@ export const formCollapseSchema: ISchema = {
   },
 }
 
-export const formCollapsePaneSchema: ISchema = {
+FormCollapseSchema.CollapsePanel = {
   type: 'object',
   properties: {
     collapsible: {

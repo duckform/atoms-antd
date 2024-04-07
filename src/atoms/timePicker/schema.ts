@@ -134,12 +134,12 @@ export const CommonTimePickerAPI = {
   },
 };
 
-export const timePickerSchema: ISchema & { RangePicker?: ISchema } = {
+export const TimePickerSchema: ISchema & { RangePicker?: ISchema } = {
   type: "object",
   properties: CommonTimePickerAPI as any,
 };
 
-export const timeRangePickerSchema = {
+TimePickerSchema.RangePicker = {
   type: "object",
   properties: CommonTimePickerAPI as any,
 };

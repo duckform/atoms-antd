@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { NumberPicker as FormilyNumberPicker } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { numberPickerSchema } from "./schema";
+import { NumberPickerSchema } from "./schema";
 
 const PreviewNumberPicker = FormilyNumberPicker;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "NumberPicker",
     designerProps: {
-      propsSchema: createFieldSchema(numberPickerSchema),
+      propsSchema: createFieldSchema(NumberPickerSchema),
     },
   },
 ];

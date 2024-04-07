@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { TreeSelect as FormilyTreeSelect } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { treeSelectSchema } from "./schema";
+import { TreeSelectSchema } from "./schema";
 
 const PreviewTreeSelect = FormilyTreeSelect;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "TreeSelect",
     designerProps: {
-      propsSchema: createFieldSchema(treeSelectSchema),
+      propsSchema: createFieldSchema(TreeSelectSchema),
     },
   },
 ];

@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Transfer as FormilyTransfer } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { transferSchema } from "./schema";
+import { TransferSchema } from "./schema";
 
 const PreviewTransfer = FormilyTransfer;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Transfer",
     designerProps: {
-      propsSchema: createFieldSchema(transferSchema),
+      propsSchema: createFieldSchema(TransferSchema),
     },
   },
 ];

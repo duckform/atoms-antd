@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Select as FormilySelect } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { selectSchema } from "./schema";
+import { SelectSchema } from "./schema";
 
 const PreviewSelect = FormilySelect;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Select",
     designerProps: {
-      propsSchema: createFieldSchema(selectSchema),
+      propsSchema: createFieldSchema(SelectSchema),
     },
   },
 ];

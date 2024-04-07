@@ -1,6 +1,6 @@
 import { ISchema } from "@formily/react";
 
-export const transferSchema: ISchema = {
+export const TransferSchema: ISchema = {
   type: 'object',
   properties: {
     oneWay: {

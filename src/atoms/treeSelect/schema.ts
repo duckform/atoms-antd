@@ -1,7 +1,7 @@
 import { ISchema } from "@formily/react";
 import { composeEnum } from '../../utils/composeEnum'
 
-export const treeSelectSchema: ISchema = {
+export const TreeSelectSchema: ISchema = {
   type: "object",
   properties: {
     allowClear: {

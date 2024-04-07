@@ -8,7 +8,7 @@ import {
 import { FormGrid as FormilyGird } from "@formily/antd";
 import { observer } from "@formily/reactive-react";
 import React from "react";
-import { formGridSchema, formGridColumnSchema } from "./schema";
+import { FormGridSchema } from "./schema";
 import "./styles.less";
 import { createFieldSchema } from "../field/schema";
 import { LoadTemplate } from "../../utils/LoadTemplate";
@@ -64,7 +64,7 @@ const Behavior: IBehaviorCreator[] = [
     designerProps: {
       droppable: true,
       allowDrop: (node) => node.props?.["x-component"] !== "FormGrid",
-      propsSchema: createFieldSchema(formGridSchema),
+      propsSchema: createFieldSchema(FormGridSchema),
     },
   },
   {
@@ -97,7 +97,7 @@ const Behavior: IBehaviorCreator[] = [
       resizeMin: 1,
       resizeMax: 12,
       allowDrop: (node) => node.props?.["x-component"] === "FormGrid",
-      propsSchema: createFieldSchema(formGridColumnSchema),
+      propsSchema: createFieldSchema(FormGridSchema.GridColumn),
     },
   },
 ];

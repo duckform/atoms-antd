@@ -1,7 +1,7 @@
 import { ISchema } from "@formily/react";
 import { composeEnum } from "../../utils/composeEnum";
 
-export const cascaderSchema: ISchema = {
+export const CascaderSchema: ISchema = {
   type: "object",
   properties: {
     allowClear: {

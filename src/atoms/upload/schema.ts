@@ -1,7 +1,7 @@
 import { ISchema } from "@formily/react";
 import { composeEnum } from "../../utils/composeEnum";
 
-export const uploadSchema: ISchema = {
+export const UploadSchema: ISchema & { Dragger?: ISchema } = {
   type: 'object',
   properties: {
     textContent: {
@@ -121,4 +121,4 @@ export const uploadSchema: ISchema = {
   },
 }
 
-export const uploadDraggerSchema = uploadSchema;
+UploadSchema.Dragger = UploadSchema;

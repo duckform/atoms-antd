@@ -1,7 +1,7 @@
 import { ISchema } from "@formily/react";
 import { composeEnum } from "../../utils/composeEnum";
 
-export const checkboxSchema: ISchema = {
+export const SwitchSchema: ISchema = {
   type: 'object',
   properties: {
     autoFocus: {

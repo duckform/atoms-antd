@@ -1,6 +1,6 @@
 import { ISchema } from '@formily/react'
 
-export const sliderSchema: ISchema = {
+export const SliderSchema: ISchema = {
   type: "object",
   properties: {
     allowClear: {

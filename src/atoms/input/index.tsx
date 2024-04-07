@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Input as FormilyInput } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { inputSchema, textareaSchema } from "./schema";
+import { InputSchema } from "./schema";
 
 const PreviewInput = FormilyInput;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Input",
     designerProps: {
-      propsSchema: createFieldSchema(inputSchema),
+      propsSchema: createFieldSchema(InputSchema),
     },
   },
   {
@@ -19,7 +19,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Input.TextArea",
     designerProps: {
-      propsSchema: createFieldSchema(textareaSchema),
+      propsSchema: createFieldSchema(InputSchema.TextArea),
     },
   },
 ];
@@ -40,7 +40,7 @@ const Resource: IResourceCreator[] = [
     ],
   },
   {
-    title: "文本域",
+    title: "多行输入",
     elements: [
       {
         componentName: "Field",

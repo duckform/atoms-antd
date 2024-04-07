@@ -1,7 +1,7 @@
 import { ISchema } from '@formily/react'
 import { composeEnum } from '../../utils/composeEnum';
 
-export const spaceSchema: ISchema = {
+export const SpaceSchema: ISchema = {
   type: 'object',
   properties: {
     align: {

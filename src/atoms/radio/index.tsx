@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Radio as FormilyRadio } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { radioSchema } from "./schema";
+import { RadioSchema } from "./schema";
 
 const PreviewRadio = FormilyRadio;
 
@@ -11,14 +11,14 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Radio.Group",
     designerProps: {
-      propsSchema: createFieldSchema(radioSchema),
+      propsSchema: createFieldSchema(RadioSchema),
     },
   },
 ];
 
 const Resource: IResourceCreator[] = [
   {
-    title: "单选框",
+    title: "单选框组",
     elements: [
       {
         componentName: "Field",

@@ -24,6 +24,7 @@ import {
 import { SettingsForm, setNpmCDNRegistry } from "@duckform/react/settings-form";
 import "antd/dist/antd.less";
 import React, { useMemo } from "react";
+import { Button } from "antd";
 import { Preset } from "@atoms";
 import { saveSchema } from "./utils";
 import {
@@ -61,6 +62,9 @@ const {
   FormTab,
   FormCollapse,
   Space,
+  ArrayTable,
+  ArrayCards,
+  // FormStep,
 } = Preset;
 
 // GlobalRegistry.registerDesignerLocales({
@@ -104,18 +108,18 @@ export const App = () => {
                 Input,
                 Password,
                 NumberPicker,
-                Radio,
-                Checkbox,
-                Switch,
+                Rate,
+                Slider,
                 Select,
                 TreeSelect,
                 Cascader,
                 Transfer,
+                Checkbox,
+                Radio,
                 DatePicker,
                 TimePicker,
                 Upload,
-                Rate,
-                Slider,
+                Switch,
                 ObjectContainer,
               ]}
             />
@@ -125,12 +129,18 @@ export const App = () => {
                 Card,
                 FormGrid,
                 FormTab,
+                // FormStep,
                 FormLayout,
                 FormCollapse,
                 Space,
               ]}
             />
+            <ResourceWidget
+              title="自增组件"
+              sources={[ArrayCards, ArrayTable]}
+            />
           </CompositePanel.Item>
+
           <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
             <OutlineTreeWidget />
           </CompositePanel.Item>
@@ -174,7 +184,11 @@ export const App = () => {
                       FormGrid,
                       FormTab,
                       FormCollapse,
-                      Space
+                      Space,
+                      // FormStep,
+                      Button,
+                      ArrayTable,
+                      ArrayCards,
                     }}
                   />
                 )}

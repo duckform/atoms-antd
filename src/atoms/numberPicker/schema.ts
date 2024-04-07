@@ -1,7 +1,7 @@
 import { ISchema } from "@formily/react";
 import { composeEnum } from "../../utils/composeEnum";
 
-export const numberPickerSchema: ISchema = {
+export const NumberPickerSchema: ISchema = {
   type: "object",
   properties: {
     decimalSeparator: {

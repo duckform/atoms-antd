@@ -2,7 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Card as AntdCard } from "antd";
 import { createVoidFieldSchema } from "@basic";
 import { DnFC } from "@duckform/react";
-import { cardSchema } from "./schema";
+import { CardSchema } from "./schema";
 
 const PreviewCard: DnFC<React.ComponentProps<typeof AntdCard>> = (props) => {
   return (
@@ -26,7 +26,7 @@ const Behavior: IBehaviorCreator[] = [
     selector: (node) => node.props?.["x-component"] === "Card",
     designerProps: {
       droppable: true,
-      propsSchema: createVoidFieldSchema(cardSchema),
+      propsSchema: createVoidFieldSchema(CardSchema),
     },
   },
 ];

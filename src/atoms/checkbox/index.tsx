@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Checkbox as FormilyCheckbox } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { checkboxSchema } from "./schema";
+import { CheckboxSchema } from "./schema";
 
 const PreviewCheckbox = FormilyCheckbox;
 
@@ -11,14 +11,14 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Checkbox.Group",
     designerProps: {
-      propsSchema: createFieldSchema(checkboxSchema),
+      propsSchema: createFieldSchema(CheckboxSchema),
     },
   },
 ];
 
 const Resource: IResourceCreator[] = [
   {
-    title: "复选框",
+    title: "复选框组",
     elements: [
       {
         componentName: "Field",

@@ -1,5 +1,5 @@
 import { createBehavior, createResource } from "@duckform/core";
-import { Field, Form, FormLayout, ObjectContainer, FormGrid, FormTab, FormCollapse } from "./basic";
+import { Field, Form, FormLayout, ObjectContainer, FormGrid, FormTab, FormCollapse, FormStep, ArrayTable, ArrayCards } from "./basic";
 import { Input } from "./atoms/input";
 import { Password } from './atoms/password';
 import { NumberPicker } from './atoms/numberPicker';
@@ -57,4 +57,8 @@ export const Preset = {
   FormCollapse: genComp(FormCollapse),
   Card: genComp(Card),
   Space: genComp(Space),
+  ArrayTable: genComp(ArrayTable),
+  ArrayCards: genComp(ArrayCards),
+
+  // FormStep: genComp(FormStep),
 };

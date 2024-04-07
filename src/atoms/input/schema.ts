@@ -1,7 +1,7 @@
 import type { ISchema } from "@formily/react";
 import { composeEnum } from "../../utils/composeEnum";
 
-export const inputSchema: ISchema = {
+export const InputSchema: ISchema & { TextArea?: ISchema } = {
   type: "object",
   properties: {
     addonBefore: {
@@ -71,7 +71,7 @@ export const inputSchema: ISchema = {
   },
 };
 
-export const textareaSchema: ISchema = {
+InputSchema.TextArea = {
   type: "object",
   properties: {
     bordered: {

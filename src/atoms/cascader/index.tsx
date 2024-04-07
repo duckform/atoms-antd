@@ -1,7 +1,7 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Cascader as FormilyCascader } from "@formily/antd";
 import { createFieldSchema } from "@basic";
-import { cascaderSchema } from "./schema";
+import { CascaderSchema } from "./schema";
 
 const PreviewCascader = FormilyCascader;
 
@@ -11,7 +11,7 @@ const Behavior: IBehaviorCreator[] = [
     extends: ["Field"],
     selector: (node) => node.props?.["x-component"] === "Cascader",
     designerProps: {
-      propsSchema: createFieldSchema(cascaderSchema),
+      propsSchema: createFieldSchema(CascaderSchema),
     },
   },
 ];

@@ -14,7 +14,7 @@ import { useDropTemplate } from "../../hooks/index";
 import { matchComponent } from "../../utils/shared";
 import { createVoidFieldSchema } from "../field/schema";
 import { LoadTemplate } from "../../utils/LoadTemplate";
-import { formTabSchema, formTabPaneSchema } from "./schema";
+import { FormTabSchema } from "./schema";
 
 const parseTabs = (parent: TreeNode) => {
   const tabs: TreeNode[] = [];
@@ -144,7 +144,7 @@ const Behavior: IBehaviorCreator[] = [{
       source!.every(
         (node) => node.props?.["x-component"] === "FormTab.TabPane",
       ),
-    propsSchema: createVoidFieldSchema(formTabSchema),
+    propsSchema: createVoidFieldSchema(FormTabSchema),
   },
 },
 {
@@ -154,7 +154,7 @@ const Behavior: IBehaviorCreator[] = [{
   designerProps: {
     droppable: true,
     allowDrop: (node) => node.props?.["x-component"] === "FormTab",
-    propsSchema: createVoidFieldSchema(formTabPaneSchema),
+    propsSchema: createVoidFieldSchema(FormTabSchema.TabPane),
   },
 }];
 

@@ -1,17 +1,17 @@
 import type { ISchema } from "@formily/react";
 import { styleSchema } from "../style/schema";
-import { formLayoutSchema } from "../form-layout/schema";
+import { FormLayoutSchema } from "../form-layout/schema";
 
-export const formSchema = {
+export const FormSchema = {
   type: "object",
   properties: {
-    "form-layout-gorup": {
+    "form-layout-group": {
       title: "表单布局属性",
       type: "void",
       "x-component": "CollapseItem",
-      properties: formLayoutSchema.properties,
+      properties: FormLayoutSchema.properties,
     },
-    "form-style-gorup": {
+    "form-style-group": {
       title: "表单样式属性",
       type: "void",
       "x-component": "CollapseItem",

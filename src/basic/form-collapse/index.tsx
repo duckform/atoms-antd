@@ -11,7 +11,7 @@ import { toArr } from "@formily/shared";
 import { Collapse } from "antd";
 import { CollapsePanelProps, CollapseProps } from "antd/lib/collapse";
 import React, { Fragment, useState } from "react";
-import { formCollapseSchema, formCollapsePaneSchema } from "./schema";
+import { FormCollapseSchema } from "./schema";
 import { matchComponent } from "../../utils/shared";
 import { createVoidFieldSchema } from "../field/schema";
 import { LoadTemplate } from "../../utils/LoadTemplate";
@@ -136,7 +136,7 @@ const Behavior: IBehaviorCreator[] = [
           (node) =>
             node.props?.["x-component"] === "FormCollapse.CollapsePanel",
         ),
-      propsSchema: createVoidFieldSchema(formCollapseSchema),
+      propsSchema: createVoidFieldSchema(FormCollapseSchema),
     },
   },
   {
@@ -147,7 +147,7 @@ const Behavior: IBehaviorCreator[] = [
     designerProps: {
       droppable: true,
       allowDrop: (node) => node.props?.["x-component"] === "FormCollapse",
-      propsSchema: createVoidFieldSchema(formCollapsePaneSchema),
+      propsSchema: createVoidFieldSchema(FormCollapseSchema.CollapsePanel),
     },
   },
 ];

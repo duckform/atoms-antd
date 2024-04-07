@@ -2,13 +2,13 @@ import { createForm } from "@formily/core";
 import { useMemo } from "react";
 import { Form as FormilyForm } from "@formily/antd";
 import type { IBehaviorCreator, IResourceCreator } from "@duckform/core";
-import { formSchema } from "./schema";
+import { FormSchema } from "./schema";
 import { usePrefix } from "@duckform/react";
 
 const PreviewForm: React.FC<React.ComponentProps<typeof FormilyForm>> = (
   props,
 ) => {
-  const cls = usePrefix("desinable-form");
+  const cls = usePrefix("dn-form");
 
   const form = useMemo(() => {
     return createForm({
@@ -32,7 +32,7 @@ const Behavior: IBehaviorCreator = {
       cloneable: !node.isRoot,
       deletable: !node.isRoot,
       droppable: true,
-      propsSchema: formSchema,
+      propsSchema: FormSchema,
       defaultProps: {
         labelCol: 6,
         wrapperCol: 12,
@@ -42,7 +42,6 @@ const Behavior: IBehaviorCreator = {
 };
 
 const Resource: IResourceCreator = {
-  // icon: "",
   title: "表单",
   elements: [
     {
