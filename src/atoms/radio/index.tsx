@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Radio as FormilyRadio } from "@formily/antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { RadioSchema } from "./schema";
 
 const PreviewRadio = FormilyRadio;

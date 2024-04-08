@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Transfer as FormilyTransfer } from "@formily/antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { TransferSchema } from "./schema";
 
 const PreviewTransfer = FormilyTransfer;

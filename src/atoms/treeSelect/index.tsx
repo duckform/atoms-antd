@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { TreeSelect as FormilyTreeSelect } from "@formily/antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { TreeSelectSchema } from "./schema";
 
 const PreviewTreeSelect = FormilyTreeSelect;

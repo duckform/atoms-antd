@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Card as AntdCard } from "antd";
-import { createVoidFieldSchema } from "@basic";
+import { createVoidFieldSchema } from "@basic/field/schema";
 import { DnFC } from "@duckform/react";
 import { CardSchema } from "./schema";
 

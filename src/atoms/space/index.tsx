@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Space as FormilySpace } from "@formily/antd";
-import { createVoidFieldSchema } from "@basic";
+import { createVoidFieldSchema } from "@basic/field/schema";
 import { DnFC } from "@duckform/react";
 import { SpaceSchema } from "./schema";
 import { withContainer } from "../../utils/Container";

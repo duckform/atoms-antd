@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { TimePicker as FormilyTimePicker } from "@formily/antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { TimePickerSchema } from "./schema";
 
 const PreviewTimePicker = FormilyTimePicker;

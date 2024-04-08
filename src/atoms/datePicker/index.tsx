@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { DatePicker as FormilyDatePicker } from "@formily/antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { DatePickerSchema } from "./schema";
 
 const PreviewDatePicker = FormilyDatePicker;
