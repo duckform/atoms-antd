@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { DesignModal } from "../../utils/DesignModal";
-import { createVoidFieldSchema } from "../field/schema";
+import { createVoidFieldSchema } from "@basic/field/schema";
 import { ShadowModalSchema } from "./schema";
 
 const Behavior: IBehaviorCreator[] = [{

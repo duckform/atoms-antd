@@ -13,7 +13,7 @@ import { CollapsePanelProps, CollapseProps } from "antd/lib/collapse";
 import React, { Fragment, useState } from "react";
 import { FormCollapseSchema } from "./schema";
 import { matchComponent } from "../../utils/shared";
-import { createVoidFieldSchema } from "../field/schema";
+import { createVoidFieldSchema } from "@basic/field/schema";
 import { LoadTemplate } from "../../utils/LoadTemplate";
 import { useDropTemplate } from "../../hooks";
 

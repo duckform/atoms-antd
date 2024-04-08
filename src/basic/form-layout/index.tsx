@@ -1,6 +1,6 @@
 import type { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { FormLayout as FormilyFormLayout } from "@formily/antd";
-import { createVoidFieldSchema } from "../../basic/field/schema";
+import { createVoidFieldSchema } from "@basic/field/schema";
 import { FormLayoutSchema } from "./schema";
 import { DroppableWidget } from "@duckform/react";
 

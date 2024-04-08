@@ -12,7 +12,7 @@ import { TabPaneProps, TabsProps } from "antd/lib/tabs";
 import React, { Fragment, useState } from "react";
 import { useDropTemplate } from "../../hooks/index";
 import { matchComponent } from "../../utils/shared";
-import { createVoidFieldSchema } from "../field/schema";
+import { createVoidFieldSchema } from "@basic/field/schema";
 import { LoadTemplate } from "../../utils/LoadTemplate";
 import { FormTabSchema } from "./schema";
 

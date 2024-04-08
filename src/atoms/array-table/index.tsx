@@ -20,7 +20,7 @@ import {
   hasNodeByComponentPath,
   queryNodesByComponentPath,
 } from "../../utils/shared";
-import { createVoidFieldSchema, createFieldSchema } from "../field/schema";
+import { createVoidFieldSchema, createFieldSchema } from "@basic/field/schema";
 import "./styles.less";
 
 const ArrayBase = AntdArrayBase as Required<typeof AntdArrayBase> &

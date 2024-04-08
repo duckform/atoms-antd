@@ -1,6 +1,6 @@
 import { ISchema } from "@formily/react";
 import { composeEnum } from "../../utils/composeEnum";
-import { FormLayoutSchema } from "../form-layout/schema";
+import { FormLayoutSchema } from "@basic/form-layout/schema";
 import { styleSchema } from "../style/schema";
 
 export const dataFieldSchema = {

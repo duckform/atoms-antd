@@ -1,5 +1,5 @@
 import { createBehavior, createResource } from "@duckform/core";
-import { Field, Form, FormLayout, ObjectContainer, FormGrid, FormTab, FormCollapse, FormStep, ArrayTable, ArrayCards, ProArrayTable, ShadowModal } from "./basic";
+import { Field, Form, ObjectContainer, FormGrid, FormLayout } from "./basic";
 import { Input } from "./atoms/input";
 import { Password } from './atoms/password';
 import { NumberPicker } from './atoms/numberPicker';
@@ -17,6 +17,13 @@ import { Cascader } from "./atoms/cascader";
 import { Switch } from "./atoms/switch";
 import { Card } from "./atoms/card";
 import { Space } from "./atoms/space";
+import { FormTab } from './atoms/form-tab';
+import { FormCollapse } from './atoms/form-collapse';
+// import { FormStep } from './atoms/form-step';
+import { ArrayTable } from './atoms/array-table';
+import { ArrayCards } from './atoms/array-cards';
+import { ProArrayTable } from './atoms/pro-array-table';
+import { ShadowModal } from './atoms/shadow-modal';
 
 const genComp = (Comp: any): any => {
   if (Comp.Resource) {
@@ -59,7 +66,7 @@ export const Preset = {
   Space: genComp(Space),
   ArrayTable: genComp(ArrayTable),
   ArrayCards: genComp(ArrayCards),
-  FormStep: genComp(FormStep),
+  // FormStep: genComp(FormStep),
   ProArrayTable: genComp(ProArrayTable),
   ShadowModal: genComp(ShadowModal),
 };

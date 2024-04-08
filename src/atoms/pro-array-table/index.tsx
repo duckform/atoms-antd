@@ -13,7 +13,7 @@ import cls from "classnames";
 import React, { useEffect, useRef } from "react";
 import { LoadTemplate } from "../../utils/LoadTemplate";
 import { useDropTemplate } from "../../hooks";
-import { createFieldSchema, createVoidFieldSchema } from "../field/schema";
+import { createFieldSchema, createVoidFieldSchema } from "@basic/field/schema";
 import { actions, dropTemplate, init, query, shadowHelper } from "./helper";
 import { ProArrayTableSchema } from "./schema";
 import "./styles.less";
