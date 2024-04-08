@@ -1,5 +1,5 @@
 import {
-  GlobalRegistry,
+  // GlobalRegistry,
   KeyCode,
   Shortcut,
   createDesigner,
@@ -24,9 +24,8 @@ import {
 import { SettingsForm, setNpmCDNRegistry } from "@duckform/react/settings-form";
 import "antd/dist/antd.less";
 import React, { useMemo } from "react";
-
+import { Button } from "antd";
 import { Preset } from "@atoms";
-const { Field, Form, FormLayout, Input, ObjectContainer } = Preset;
 import { saveSchema } from "./utils";
 import {
   ActionsWidget,
@@ -38,24 +37,38 @@ import {
 
 // setNpmCDNRegistry("//unpkg.com");
 
-GlobalRegistry.registerDesignerLocales({
-  "zh-CN": {
-    sources: {
-      Inputs: "输入控件",
-      Layouts: "布局组件",
-      Arrays: "自增组件",
-      Displays: "展示组件",
-    },
-  },
-  "en-US": {
-    sources: {
-      Inputs: "Inputs",
-      Layouts: "Layouts",
-      Arrays: "Arrays",
-      Displays: "Displays",
-    },
-  },
-});
+const {
+  Field,
+  Form,
+  FormLayout,
+  Input,
+  Password,
+  ObjectContainer,
+  NumberPicker,
+  Radio,
+  Checkbox,
+  Select,
+  Rate,
+  Slider,
+  TreeSelect,
+  Transfer,
+  DatePicker,
+  TimePicker,
+  Upload,
+  Cascader,
+  Switch,
+  Card,
+  FormGrid,
+  FormTab,
+  FormCollapse,
+  Space,
+  ArrayTable,
+  ArrayCards,
+  // FormStep,
+  ShadowModal,
+  ProArrayTable,
+} = Preset;
+
 
 export const App = () => {
   const engine = useMemo(
@@ -82,8 +95,45 @@ export const App = () => {
         <CompositePanel>
           <CompositePanel.Item title="panels.Component" icon="Component">
             <ResourceWidget
-              title="sources.Inputs"
-              sources={[ObjectContainer, FormLayout, Input]}
+              title="Pro"
+              sources={[ShadowModal, ProArrayTable]}
+            />
+            <ResourceWidget
+              title="输入控件"
+              sources={[
+                Input,
+                Password,
+                NumberPicker,
+                Rate,
+                Slider,
+                Select,
+                TreeSelect,
+                Cascader,
+                Transfer,
+                Checkbox,
+                Radio,
+                DatePicker,
+                TimePicker,
+                Upload,
+                Switch,
+                ObjectContainer,
+              ]}
+            />
+            <ResourceWidget
+              title="布局组件"
+              sources={[
+                Card,
+                FormGrid,
+                FormTab,
+                // FormStep,
+                FormLayout,
+                FormCollapse,
+                Space,
+              ]}
+            />
+            <ResourceWidget
+              title="自增组件"
+              sources={[ArrayCards, ArrayTable]}
             />
           </CompositePanel.Item>
           <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
@@ -111,6 +161,31 @@ export const App = () => {
                       ObjectContainer,
                       FormLayout,
                       Input,
+                      Password,
+                      NumberPicker,
+                      Radio,
+                      Checkbox,
+                      Select,
+                      Rate,
+                      Slider,
+                      TreeSelect,
+                      Transfer,
+                      DatePicker,
+                      TimePicker,
+                      Upload,
+                      Cascader,
+                      Switch,
+                      Card,
+                      FormGrid,
+                      FormTab,
+                      FormCollapse,
+                      Space,
+                      // FormStep,
+                      Button,
+                      ArrayTable,
+                      ArrayCards,
+                      ProArrayTable,
+                      ShadowModal,
                     }}
                   />
                 )}

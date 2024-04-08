@@ -1,7 +1,7 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from "../utils";
+import { composeEnum } from "../../utils/composeEnum";
 
-export const formLayoutSchema = {
+export const FormLayoutSchema = {
   type: "object",
   properties: {
     labelCol: {
@@ -33,7 +33,7 @@ export const formLayoutSchema = {
       "x-component": "SizeInput",
     },
     colon: {
-      title: "冒号",
+      title: "是否有冒号",
       type: "boolean",
       "x-decorator": "FormItem",
       "x-component": "Switch",

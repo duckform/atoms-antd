@@ -1,6 +1,6 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from "../utils";
-import { formLayoutSchema } from "../form-layout/schema";
+import { composeEnum } from "../../utils/composeEnum";
+import { FormLayoutSchema } from "@basic/form-layout/schema";
 import { styleSchema } from "../style/schema";
 
 export const dataFieldSchema = {
@@ -249,7 +249,7 @@ export const createFieldSchema = (
 };
 
 export const createVoidFieldSchema = (
-  component: ISchema,
+  component?: ISchema,
   decorator: ISchema = formItemSchema,
 ) => {
   const schema = {
@@ -288,6 +288,6 @@ export const formItemSchema = {
       "x-decorator": "FormItem",
       "x-component": "Input",
     },
-    ...formLayoutSchema.properties,
+    ...FormLayoutSchema.properties,
   },
 } satisfies ISchema;
