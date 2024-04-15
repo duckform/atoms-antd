@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { NumberPicker as FormilyNumberPicker } from "@formily/antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { NumberPickerSchema } from "./schema";
 
 const PreviewNumberPicker = FormilyNumberPicker;

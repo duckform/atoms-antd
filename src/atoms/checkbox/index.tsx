@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Checkbox as FormilyCheckbox } from "@formily/antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { CheckboxSchema } from "./schema";
 
 const PreviewCheckbox = FormilyCheckbox;

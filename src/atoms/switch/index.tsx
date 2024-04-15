@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Switch as AntdSwitch } from "antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { SwitchSchema } from "./schema";
 
 const PreviewSwitch = AntdSwitch;

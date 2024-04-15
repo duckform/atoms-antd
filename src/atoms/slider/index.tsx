@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Slider as AntdSlider } from "antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { SliderSchema } from "./schema";
 
 const PreviewSlider = AntdSlider;

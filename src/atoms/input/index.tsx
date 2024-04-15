@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Input as FormilyInput } from "@formily/antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { InputSchema } from "./schema";
 
 const PreviewInput = FormilyInput;

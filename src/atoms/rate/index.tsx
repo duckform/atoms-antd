@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Rate as AntdRate } from "antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { RateSchema } from "./schema";
 
 const PreviewRate = AntdRate;

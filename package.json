@@ -5,7 +5,9 @@
     "dev": "npx rsbuild dev",
     "build": "bunx father build"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
@@ -19,8 +21,8 @@
   },
   "homepage": "https://github.com/duckform/atoms-antd#readme",
   "dependencies": {
-    "@duckform/core": "0.1.0-alpha.10",
-    "@duckform/react": "0.1.0-alpha.10",
+    "@duckform/core": "0.1.0-alpha.11",
+    "@duckform/react": "0.1.0-alpha.11",
     "@formily/antd": "^2.3.1",
     "@formily/core": "^2.3.1",
     "@formily/react": "^2.3.1",

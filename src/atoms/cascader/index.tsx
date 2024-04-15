@@ -1,6 +1,6 @@
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Cascader as FormilyCascader } from "@formily/antd";
-import { createFieldSchema } from "@basic";
+import { createFieldSchema } from "@basic/field/schema";
 import { CascaderSchema } from "./schema";
 
 const PreviewCascader = FormilyCascader;
