@@ -48,7 +48,7 @@ jobs:
       - run: |
           # 更新 package.json 文件中的版本号
           sed -i "s/\"version\": \".*\"/\"version\": \"${{steps.parse_tag.outputs.version}}\"/" ./package.json
-          sed -i "s/\"FILL_BY_GA_SCRIPTS\" \"${{steps.parse_tag.outputs.version}}\"/" ./dist/umd/info.min.js
+          sed -i "s/FILL_BY_GA_SCRIPTS/${{steps.parse_tag.outputs.version}}/" ./dist/umd/info.min.js
 
           npm publish --access=public --tag ${{steps.parse_tag.outputs.tag}} . 
 
