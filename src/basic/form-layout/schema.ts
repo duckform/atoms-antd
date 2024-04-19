@@ -1,5 +1,5 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from "../../utils/composeEnum";
+import { composeEnum } from "@utils/composeEnum";
 
 export const FormLayoutSchema = {
   type: "object",

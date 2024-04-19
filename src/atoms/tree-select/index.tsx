@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { TreeSelect as FormilyTreeSelect } from "@formily/antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { TreeSelectSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewTreeSelect = FormilyTreeSelect;
 
@@ -35,6 +36,5 @@ const Resource: IResourceCreator[] = [
 export const TreeSelect = Object.assign(PreviewTreeSelect, {
   Behavior,
   Resource,
-  accepts: ["number", 'string'],
-  transform: () => { }
+  ...quick,
 });

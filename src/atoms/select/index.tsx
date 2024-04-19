@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Select as FormilySelect } from "@formily/antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { SelectSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewSelect = FormilySelect;
 
@@ -35,6 +36,5 @@ const Resource: IResourceCreator[] = [
 export const Select = Object.assign(PreviewSelect, {
   Behavior,
   Resource,
-  accepts: ["string", "number"],
-  transform: () => { }
+  ...quick,
 });

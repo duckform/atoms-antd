@@ -2,12 +2,11 @@
   "name": "@duckform/atoms-antd",
   "version": "0.1.0-alpha.2",
   "scripts": {
+    "prebuild": "bun run scripts/buildinfo.ts",
     "dev": "npx rsbuild dev",
     "build": "bunx father build"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"

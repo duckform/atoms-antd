@@ -1,4 +1,10 @@
-import { IBehaviorCreator, IResourceCreator, TreeNode, createBehavior, createResource } from "@duckform/core";
+import {
+  IBehaviorCreator,
+  IResourceCreator,
+  TreeNode,
+  createBehavior,
+  createResource,
+} from "@duckform/core";
 import {
   DnFC,
   DroppableWidget,
@@ -12,10 +18,11 @@ import { Collapse } from "antd";
 import { CollapsePanelProps, CollapseProps } from "antd/lib/collapse";
 import React, { Fragment, useState } from "react";
 import { FormCollapseSchema } from "./schema";
-import { matchComponent } from "../../utils/shared";
+import { matchComponent } from "@utils/shared";
 import { createVoidFieldSchema } from "@basic/field/schema";
-import { LoadTemplate } from "../../utils/LoadTemplate";
-import { useDropTemplate } from "../../hooks";
+import { LoadTemplate } from "@utils/LoadTemplate";
+import { useDropTemplate } from "@hooks/useDropTemplate";
+import { quick } from "./quick";
 
 const parseCollapse = (parent: TreeNode) => {
   const tabs: TreeNode[] = [];
@@ -96,7 +103,7 @@ const PreviewFormCollapse: DnFC<CollapseProps> & {
       <LoadTemplate
         actions={[
           {
-            title: '添加面板',
+            title: "添加面板",
             onClick: () => {
               const tabPane = new TreeNode({
                 componentName: "Field",
@@ -152,22 +159,23 @@ const Behavior: IBehaviorCreator[] = [
   },
 ];
 
-const Resource: IResourceCreator[] = [{
-  title: "折叠面板",
-  elements: [
-    {
-      componentName: "Field",
-      props: {
-        type: "void",
-        "x-component": "FormCollapse",
+const Resource: IResourceCreator[] = [
+  {
+    title: "折叠面板",
+    elements: [
+      {
+        componentName: "Field",
+        props: {
+          type: "void",
+          "x-component": "FormCollapse",
+        },
       },
-    },
-  ],
-}];
+    ],
+  },
+];
 
 export const FormCollapse = Object.assign(PreviewFormCollapse, {
   Behavior,
   Resource,
-  accepts: ["void"],
-  transform: () => { }
+  ...quick,
 });

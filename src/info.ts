@@ -18,5 +18,5 @@ export const deps = {
   "@formily/reactive-react": ["Formily.ReactiveReact", null],
 };
 
-export const atoms = ["input"];
-export const version = "0.1.1";
+export const atoms = ["FILL_BY_SCRIPTS"];
+export const version = "FILL_BY_GA_SCRIPTS";

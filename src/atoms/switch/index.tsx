@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Switch as AntdSwitch } from "antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { SwitchSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewSwitch = AntdSwitch;
 
@@ -36,6 +37,5 @@ const Resource: IResourceCreator[] = [
 export const Switch = Object.assign(PreviewSwitch, {
   Behavior,
   Resource,
-  accepts: ["boolean"],
-  transform: () => { }
+  ...quick,
 });

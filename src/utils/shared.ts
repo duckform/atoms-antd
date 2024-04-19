@@ -1,4 +1,54 @@
 import { Engine, TreeNode } from "@duckform/core";
+type AcceptType =
+  | "void"
+  | "string"
+  | "number"
+  | "integer"
+  | "array"
+  | "boolean"
+  | "null"
+  | "object";
+
+export type QuickTransformer = {
+  accepts: AcceptType[];
+  disable?: (node: TreeNode) => boolean;
+  transform?: (node: TreeNode) => TreeNode;
+  reset?: (node: TreeNode) => TreeNode;
+};
+
+export const makeTransfomer = (
+  CompName: string,
+  options: QuickTransformer,
+  appendProps?: Record<string, any>,
+) => {
+  const transfomer: QuickTransformer = {
+    ...options,
+    transform: (node) => {
+      const done = getNodeProps(node, "x-component") === CompName;
+      if (done) return node;
+      const props = node.props!["x-components-props"];
+      node.props!["x-components-props"] = {
+        ...props,
+        ...appendProps,
+        _memo: props,
+      };
+      return node;
+    },
+    reset: (node) => {
+      const changed = getNodeProps(node, "x-component") === CompName;
+      if (!changed) return node;
+      const props = node.props!["x-components-props"];
+      node.props!["x-components-props"] = { ...props._memo };
+      return node;
+    },
+  };
+  return transfomer;
+};
+
+export const getNodeProps = (
+  node: TreeNode,
+  key: "x-component" | "x-component-props" | "type" | "title" | (string & {}),
+) => node?.props?.[key];
 
 export type ComponentNameMatcher =
   | string
@@ -52,8 +102,8 @@ export const queryNodesByComponentPath = (
   }
   return matchComponent(node, path[0])
     ? node.children.reduce((buf, child) => {
-      return buf.concat(queryNodesByComponentPath(child, path.slice(1)));
-    }, [] as TreeNode[])
+        return buf.concat(queryNodesByComponentPath(child, path.slice(1)));
+      }, [] as TreeNode[])
     : [];
 };
 

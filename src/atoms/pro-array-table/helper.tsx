@@ -4,7 +4,7 @@ import {
   findNodeByComponentPath,
   hasNodeByComponentPath,
   queryNodesByComponentPath,
-} from "../../utils/shared";
+} from "@utils/shared";
 import { uid } from "@duckform/core/shared";
 
 const PREFIX = "ProArrayTable";
@@ -139,8 +139,8 @@ export const init = (parent: TreeNode) => {
   const sort = createSortHandler();
   ops.children.unshift(shadow.delegate);
 
-  parent.props["x-component-props"] = parent.props["x-component-props"] || {};
-  parent.props["x-component-props"].sortable = true;
+  parent.props!["x-component-props"] = parent.props!["x-component-props"] || {};
+  parent.props!["x-component-props"].sortable = true;
   ensureObjectItemsNode(parent).prepend(column, ops);
   ensureObjectItemsNode(parent).prepend(sort, index);
 
@@ -170,8 +170,9 @@ export const actions = {
     if (!has) {
       const sort = createSortHandler();
       ensureObjectItemsNode(node).prepend(sort);
-      node.props["x-components-props"] = node.props["x-components-props"] || {};
-      node.props["x-components-props"].sortable = true;
+      node.props!["x-components-props"] =
+        node.props!["x-components-props"] || {};
+      node.props!["x-components-props"].sortable = true;
     }
   },
   addIndex(node: TreeNode) {
@@ -227,7 +228,7 @@ export const actions = {
       "*",
       `${PREFIX}.Column`,
       (name, node) => {
-        return node.props["x-component"] === `${PREFIX}.DelegateAction`;
+        return node.props!["x-component"] === `${PREFIX}.DelegateAction`;
       },
       // `${Prefix}.DelegateAction`,
     ]);
@@ -243,7 +244,7 @@ export const actions = {
 
 const findParentArrayTable = (node: TreeNode) => {
   let parent = node;
-  while (parent && parent.props["x-component"] !== PREFIX) {
+  while (parent && parent.props!["x-component"] !== PREFIX) {
     parent = parent.parent;
   }
   return parent;
@@ -254,7 +255,7 @@ export const shadowHelper = {
   findDelegates(node: TreeNode) {
     if (!node) return [];
     const delegates = node.findAll((child) => {
-      return child.props["x-component"] === `${PREFIX}.DelegateAction`;
+      return child.props!["x-component"] === `${PREFIX}.DelegateAction`;
     });
     return delegates;
   },
@@ -263,8 +264,8 @@ export const shadowHelper = {
     delegates.forEach((act) => {
       const table = findParentArrayTable(act);
       table.eachChildren((sub) => {
-        if (sub.props["x-component"] === `${PREFIX}.ShadowModal`) {
-          if (act.props.name && sub.props?.name === act.props.name) {
+        if (sub.props!["x-component"] === `${PREFIX}.ShadowModal`) {
+          if (act.props!.name && sub.props?.name === act.props!.name) {
             sub.remove();
           }
         }

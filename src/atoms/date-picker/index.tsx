@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { DatePicker as FormilyDatePicker } from "@formily/antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { DatePickerSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewDatePicker = FormilyDatePicker;
 
@@ -17,7 +18,8 @@ const Behavior: IBehaviorCreator[] = [
   {
     name: "DatePicker.RangePicker",
     extends: ["Field"],
-    selector: (node) => node.props?.["x-component"] === "DatePicker.RangePicker",
+    selector: (node) =>
+      node.props?.["x-component"] === "DatePicker.RangePicker",
     designerProps: {
       propsSchema: createFieldSchema(DatePickerSchema.RangePicker),
     },
@@ -58,6 +60,5 @@ const Resource: IResourceCreator[] = [
 export const DatePicker = Object.assign(PreviewDatePicker, {
   Behavior,
   Resource,
-  accepts: ["string"],
-  transform: () => { }
+  ...quick,
 });

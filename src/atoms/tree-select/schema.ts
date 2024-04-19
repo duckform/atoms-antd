@@ -1,5 +1,5 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from '../../utils/composeEnum'
+import { composeEnum } from "@utils/composeEnum";
 
 export const TreeSelectSchema: ISchema = {
   type: "object",
@@ -98,7 +98,7 @@ export const TreeSelectSchema: ISchema = {
       title: "复选回显策略",
       enum: composeEnum(
         ["SHOW_ALL", "SHOW_PARENT", "SHOW_CHILD"],
-        ["显示所有", "显示父节点", "显示子节点"]
+        ["显示所有", "显示父节点", "显示子节点"],
       ),
       "x-decorator": "FormItem",
       "x-component": "Select",
@@ -181,7 +181,7 @@ export const TreeSelectSchema: ISchema = {
       title: "尺寸",
       enum: composeEnum(
         ["large", "small", "middle", null!],
-        ["大", "小", "默认", "继承"]
+        ["大", "小", "默认", "继承"],
       ),
       "x-decorator": "FormItem",
       "x-component": "Select",

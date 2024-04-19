@@ -1,5 +1,5 @@
-import { ISchema } from '@formily/react'
-import { composeEnum } from '../../utils/composeEnum';
+import { ISchema } from "@formily/react";
+import { composeEnum } from "@utils/composeEnum";
 
 export const FormTabSchema: ISchema & { TabPane?: ISchema } = {
   type: "object",
@@ -21,7 +21,7 @@ export const FormTabSchema: ISchema & { TabPane?: ISchema } = {
       title: "尺寸",
       enum: composeEnum(
         ["large", "small", "default", null!],
-        ["大", "小", "默认", "继承"]
+        ["大", "小", "默认", "继承"],
       ),
       "x-decorator": "FormItem",
       "x-component": "Select",

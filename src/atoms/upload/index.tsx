@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Upload as FormilyUpload } from "@formily/antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { UploadSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewUpload = FormilyUpload;
 
@@ -64,6 +65,5 @@ const Resource: IResourceCreator[] = [
 export const Upload = Object.assign(PreviewUpload, {
   Behavior,
   Resource,
-  accepts: ["object"],
-  transform: () => { }
+  ...quick,
 });

@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Checkbox as FormilyCheckbox } from "@formily/antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { CheckboxSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewCheckbox = FormilyCheckbox;
 
@@ -40,6 +41,5 @@ const Resource: IResourceCreator[] = [
 export const Checkbox = Object.assign(PreviewCheckbox, {
   Behavior,
   Resource,
-  accepts: ["string", "number"],
-  transform: () => { }
+  ...quick,
 });

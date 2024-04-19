@@ -1,7 +1,8 @@
-import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
-import { Card as AntdCard } from "antd";
 import { createVoidFieldSchema } from "@basic/field/schema";
+import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { DnFC } from "@duckform/react";
+import { Card as AntdCard } from "antd";
+import { quick } from "./quick";
 import { CardSchema } from "./schema";
 
 const PreviewCard: DnFC<React.ComponentProps<typeof AntdCard>> = (props) => {
@@ -17,7 +18,7 @@ const PreviewCard: DnFC<React.ComponentProps<typeof AntdCard>> = (props) => {
       {props.children}
     </AntdCard>
   );
-};;
+};
 
 const Behavior: IBehaviorCreator[] = [
   {
@@ -52,6 +53,5 @@ const Resource: IResourceCreator[] = [
 export const Card = Object.assign(PreviewCard, {
   Behavior,
   Resource,
-  accepts: [],
-  transform: () => { }
+  ...quick,
 });

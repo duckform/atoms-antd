@@ -1,4 +1,4 @@
-import React from "react";
+import { createFieldSchema, createVoidFieldSchema } from "@basic/field/schema";
 import { IBehaviorCreator, IResourceCreator, TreeNode } from "@duckform/core";
 import {
   DnFC,
@@ -9,18 +9,19 @@ import {
 } from "@duckform/react";
 import { ArrayBase as AntdArrayBase } from "@formily/antd";
 import { observer } from "@formily/react";
-import { Table, TableProps } from "antd";
-import cls from "classnames";
-import { LoadTemplate } from "../../utils/LoadTemplate";
-import { useDropTemplate } from "../../hooks";
-import { ArrayTableSchema } from "./schema";
+import { LoadTemplate } from "@utils/LoadTemplate";
 import {
   createEnsureTypeItemsNode,
   findNodeByComponentPath,
   hasNodeByComponentPath,
   queryNodesByComponentPath,
-} from "../../utils/shared";
-import { createVoidFieldSchema, createFieldSchema } from "@basic/field/schema";
+} from "@utils/shared";
+import { Table, TableProps } from "antd";
+import cls from "classnames";
+import React from "react";
+import { useDropTemplate } from "@hooks/useDropTemplate";
+import { quick } from "./quick";
+import { ArrayTableSchema } from "./schema";
 import "./styles.less";
 
 const ArrayBase = AntdArrayBase as Required<typeof AntdArrayBase> &
@@ -243,7 +244,7 @@ const PreviewArrayTable: DnFC<TableProps<any>> = observer((props) => {
       <LoadTemplate
         actions={[
           {
-            title: '添加排序',
+            title: "添加排序",
             icon: "AddSort",
             onClick: () => {
               if (
@@ -278,7 +279,7 @@ const PreviewArrayTable: DnFC<TableProps<any>> = observer((props) => {
             },
           },
           {
-            title: '添加索引',
+            title: "添加索引",
             icon: "AddIndex",
             onClick: () => {
               if (
@@ -323,7 +324,7 @@ const PreviewArrayTable: DnFC<TableProps<any>> = observer((props) => {
             },
           },
           {
-            title: '添加列',
+            title: "添加列",
             icon: "AddColumn",
             onClick: () => {
               const operationNode = findNodeByComponentPath(node, [
@@ -356,7 +357,7 @@ const PreviewArrayTable: DnFC<TableProps<any>> = observer((props) => {
             },
           },
           {
-            title: '添加操作',
+            title: "添加操作",
             icon: "AddOperation",
             onClick: () => {
               const oldOperationNode = findNodeByComponentPath(node, [
@@ -432,101 +433,103 @@ const PreviewArrayTable: DnFC<TableProps<any>> = observer((props) => {
 
 ArrayBase.mixin(PreviewArrayTable);
 
-const Behavior: IBehaviorCreator[] = [{
-  name: "ArrayTable",
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayTable',
-  designerProps: {
-    droppable: true,
-    propsSchema: createFieldSchema(ArrayTableSchema),
-  },
-},
-{
-  name: 'ArrayTable.Addition',
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayTable.Addition',
-  designerProps: {
-    allowDrop(parent) {
-      return parent.props?.["x-component"] === 'ArrayTable';
+const Behavior: IBehaviorCreator[] = [
+  {
+    name: "ArrayTable",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayTable",
+    designerProps: {
+      droppable: true,
+      propsSchema: createFieldSchema(ArrayTableSchema),
     },
-    propsSchema: createVoidFieldSchema(ArrayTableSchema.Addition),
   },
-},
-{
-  name: `ArrayTable.Remove`,
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayTable.Remove',
-  designerProps: {
-    allowDrop(parent) {
-      return parent.props?.["x-component"] === 'ArrayTable';
+  {
+    name: "ArrayTable.Addition",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayTable.Addition",
+    designerProps: {
+      allowDrop(parent) {
+        return parent.props?.["x-component"] === "ArrayTable";
+      },
+      propsSchema: createVoidFieldSchema(ArrayTableSchema.Addition),
     },
-    propsSchema: createVoidFieldSchema(),
   },
-},
-{
-  name: 'ArrayTable.Index',
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayTable.Index',
-  designerProps: {
-    allowDrop(parent) {
-      return parent.props?.["x-component"] === 'ArrayTable';
+  {
+    name: `ArrayTable.Remove`,
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayTable.Remove",
+    designerProps: {
+      allowDrop(parent) {
+        return parent.props?.["x-component"] === "ArrayTable";
+      },
+      propsSchema: createVoidFieldSchema(),
     },
-    propsSchema: createVoidFieldSchema(),
   },
-},
-{
-  name: 'ArrayTable.MoveUp',
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayTable.MoveUp',
-  designerProps: {
-    allowDrop(parent) {
-      return parent.props?.["x-component"] === 'ArrayTable';
+  {
+    name: "ArrayTable.Index",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayTable.Index",
+    designerProps: {
+      allowDrop(parent) {
+        return parent.props?.["x-component"] === "ArrayTable";
+      },
+      propsSchema: createVoidFieldSchema(),
     },
-    propsSchema: createVoidFieldSchema(),
   },
-},
-{
-  name: 'ArrayTable.MoveDown',
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayTable.MoveDown',
-  designerProps: {
-    allowDrop() {
-      return false;
+  {
+    name: "ArrayTable.MoveUp",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayTable.MoveUp",
+    designerProps: {
+      allowDrop(parent) {
+        return parent.props?.["x-component"] === "ArrayTable";
+      },
+      propsSchema: createVoidFieldSchema(),
     },
-    propsSchema: createVoidFieldSchema(),
   },
-},
-{
-  name: "ArrayTable.Column",
-  extends: ["Field"],
-  selector: (node) => node.props!["x-component"] === "ArrayTable.Column",
-  designerProps: {
-    droppable: true,
-    allowDrop: (node) =>
-      node.props!["type"] === "object" &&
-      node.parent?.props?.["x-component"] === "ArrayTable",
-    propsSchema: createVoidFieldSchema(ArrayTableSchema.Column),
+  {
+    name: "ArrayTable.MoveDown",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayTable.MoveDown",
+    designerProps: {
+      allowDrop() {
+        return false;
+      },
+      propsSchema: createVoidFieldSchema(),
+    },
   },
-},
+  {
+    name: "ArrayTable.Column",
+    extends: ["Field"],
+    selector: (node) => node.props!["x-component"] === "ArrayTable.Column",
+    designerProps: {
+      droppable: true,
+      allowDrop: (node) =>
+        node.props!["type"] === "object" &&
+        node.parent?.props?.["x-component"] === "ArrayTable",
+      propsSchema: createVoidFieldSchema(ArrayTableSchema.Column),
+    },
+  },
 ];
 
-const Resource: IResourceCreator[] = [{
-  title: "自增表格",
-  elements: [
-    {
-      componentName: "Field",
-      props: {
-        type: "array",
-        "x-decorator": "FormItem",
-        "x-component": "ArrayTable",
+const Resource: IResourceCreator[] = [
+  {
+    title: "自增表格",
+    elements: [
+      {
+        componentName: "Field",
+        props: {
+          type: "array",
+          "x-decorator": "FormItem",
+          "x-component": "ArrayTable",
+        },
       },
-    },
-  ],
-}];
+    ],
+  },
+];
 
 export const ArrayTable = Object.assign(PreviewArrayTable, {
   Behavior,
   Resource,
-  accepts: ["array"],
-  transform: () => { }
+  ...quick,
 });

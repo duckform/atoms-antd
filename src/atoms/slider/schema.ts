@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from "@formily/react";
 
 export const SliderSchema: ISchema = {
   type: "object",
@@ -51,8 +51,7 @@ export const SliderSchema: ISchema = {
         include: ["EXPRESSION"],
       },
       "x-decorator-props": {
-        tooltip:
-          "设置 提示 展示位置。参考 Tooltip",
+        tooltip: "设置 提示 展示位置。参考 Tooltip",
       },
     },
     marks: {

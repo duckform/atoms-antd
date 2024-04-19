@@ -1,6 +1,7 @@
+import { createFieldSchema } from "@basic/field/schema";
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Cascader as FormilyCascader } from "@formily/antd";
-import { createFieldSchema } from "@basic/field/schema";
+import { quick } from "./quick";
 import { CascaderSchema } from "./schema";
 
 const PreviewCascader = FormilyCascader;
@@ -35,6 +36,5 @@ const Resource: IResourceCreator[] = [
 export const Cascader = Object.assign(PreviewCascader, {
   Behavior,
   Resource,
-  accepts: [],
-  transform: () => { }
+  ...quick,
 });

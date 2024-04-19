@@ -1,27 +1,27 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from "../../utils/composeEnum";
+import { composeEnum } from "@utils/composeEnum";
 
 export const SwitchSchema: ISchema = {
-  type: 'object',
+  type: "object",
   properties: {
     autoFocus: {
-      type: 'boolean',
+      type: "boolean",
       title: "自动获取焦点",
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
+      "x-decorator": "FormItem",
+      "x-component": "Switch",
     },
     size: {
-      type: 'string',
+      type: "string",
       title: "尺寸",
       enum: composeEnum(
-        ['large', 'small', 'default', ''],
-        ["大", "小", "默认", "继承"]
+        ["large", "small", "default", ""],
+        ["大", "小", "默认", "继承"],
       ),
-      'x-decorator': 'FormItem',
-      'x-component': 'Select',
-      'x-component-props': {
-        defaultValue: 'default',
+      "x-decorator": "FormItem",
+      "x-component": "Select",
+      "x-component-props": {
+        defaultValue: "default",
       },
-    }
-  }
-}
+    },
+  },
+};

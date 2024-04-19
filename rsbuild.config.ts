@@ -8,7 +8,9 @@ export default defineConfig({
     },
     alias: {
       atoms: "./src",
-      '@basic': "./src/basic",
+      "@basic": "./src/basic",
+      "@hooks": "./src/hooks",
+      "@utils": "./src/utils",
       // "@duckform/core": "./node_modules/@duckform/core/dist/esm",
       // "@duckform/core/shared": "./node_modules/@duckform/core/dist/esm/shared",
       // "@duckform/react": "./node_modules/@duckform/react/dist/esm",

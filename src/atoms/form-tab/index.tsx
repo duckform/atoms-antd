@@ -1,4 +1,10 @@
-import { IBehaviorCreator, IResourceCreator, TreeNode, createBehavior, createResource } from "@duckform/core";
+import {
+  IBehaviorCreator,
+  IResourceCreator,
+  TreeNode,
+  createBehavior,
+  createResource,
+} from "@duckform/core";
 import {
   DnFC,
   DroppableWidget,
@@ -11,10 +17,11 @@ import { Tabs } from "antd";
 import { TabPaneProps, TabsProps } from "antd/lib/tabs";
 import React, { Fragment, useState } from "react";
 import { useDropTemplate } from "../../hooks/index";
-import { matchComponent } from "../../utils/shared";
+import { matchComponent } from "@utils/shared";
 import { createVoidFieldSchema } from "@basic/field/schema";
-import { LoadTemplate } from "../../utils/LoadTemplate";
+import { LoadTemplate } from "@utils/LoadTemplate";
 import { FormTabSchema } from "./schema";
+import { quick } from "./quick";
 
 const parseTabs = (parent: TreeNode) => {
   const tabs: TreeNode[] = [];
@@ -106,11 +113,11 @@ const PreviewFormTab: DnFC<TabsProps> & {
       <LoadTemplate
         actions={[
           {
-            title: '添加选项卡',
+            title: "添加选项卡",
             onClick: () => {
               const tabPane = new TreeNode({
                 componentName: "Field",
-                resourceName: '选项卡面板',
+                resourceName: "选项卡面板",
                 props: {
                   type: "void",
                   "x-component": "FormTab.TabPane",
@@ -133,48 +140,50 @@ PreviewFormTab.TabPane = (props) => {
   return <Fragment>{props.children}</Fragment>;
 };
 
-const Behavior: IBehaviorCreator[] = [{
-  name: "FormTab",
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === "FormTab",
-  designerProps: {
-    droppable: true,
-    allowAppend: (target, source) =>
-      target.children.length === 0 ||
-      source!.every(
-        (node) => node.props?.["x-component"] === "FormTab.TabPane",
-      ),
-    propsSchema: createVoidFieldSchema(FormTabSchema),
-  },
-},
-{
-  name: "FormTab.TabPane",
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === "FormTab.TabPane",
-  designerProps: {
-    droppable: true,
-    allowDrop: (node) => node.props?.["x-component"] === "FormTab",
-    propsSchema: createVoidFieldSchema(FormTabSchema.TabPane),
-  },
-}];
-
-const Resource: IResourceCreator[] = [{
-  title: "选项卡",
-  elements: [
-    {
-      componentName: "Field",
-      props: {
-        type: "void",
-        "x-component": "FormTab",
-      },
+const Behavior: IBehaviorCreator[] = [
+  {
+    name: "FormTab",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "FormTab",
+    designerProps: {
+      droppable: true,
+      allowAppend: (target, source) =>
+        target.children.length === 0 ||
+        source!.every(
+          (node) => node.props?.["x-component"] === "FormTab.TabPane",
+        ),
+      propsSchema: createVoidFieldSchema(FormTabSchema),
     },
-  ],
-}];
+  },
+  {
+    name: "FormTab.TabPane",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "FormTab.TabPane",
+    designerProps: {
+      droppable: true,
+      allowDrop: (node) => node.props?.["x-component"] === "FormTab",
+      propsSchema: createVoidFieldSchema(FormTabSchema.TabPane),
+    },
+  },
+];
 
+const Resource: IResourceCreator[] = [
+  {
+    title: "选项卡",
+    elements: [
+      {
+        componentName: "Field",
+        props: {
+          type: "void",
+          "x-component": "FormTab",
+        },
+      },
+    ],
+  },
+];
 
 export const FormTab = Object.assign(PreviewFormTab, {
   Behavior,
   Resource,
-  accepts: ["void"],
-  transform: () => { }
+  ...quick,
 });

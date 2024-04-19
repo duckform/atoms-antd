@@ -1,5 +1,5 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from "../../utils/composeEnum";
+import { composeEnum } from "@utils/composeEnum";
 
 export const CascaderSchema: ISchema = {
   type: "object",
@@ -20,7 +20,7 @@ export const CascaderSchema: ISchema = {
       "x-component": "Switch",
       "x-decorator-props": {
         tooltip: "点选每级菜单选项值都会发生变化",
-      }
+      },
     },
     autoFocus: {
       type: "boolean",
@@ -47,7 +47,7 @@ export const CascaderSchema: ISchema = {
       },
       "x-decorator-props": {
         tooltip: '选择后展示的渲染函数，默认为label => label.join("/")	',
-      }
+      },
     },
     fieldNames: {
       type: "string",
@@ -58,8 +58,9 @@ export const CascaderSchema: ISchema = {
         include: ["EXPRESSION"],
       },
       "x-decorator-props": {
-        tooltip: '默认值：{ label: "label", value: "value", children: "children" }',
-      }
+        tooltip:
+          '默认值：{ label: "label", value: "value", children: "children" }',
+      },
     },
     showSearch: {
       type: "boolean",
@@ -87,7 +88,7 @@ export const CascaderSchema: ISchema = {
       title: "尺寸",
       enum: composeEnum(
         ["large", "small", "middle", null!],
-        ["大", "小", "默认", "继承"]
+        ["大", "小", "默认", "继承"],
       ),
       "x-decorator": "FormItem",
       "x-component": "Select",

@@ -1,5 +1,5 @@
 import type { ISchema } from "@formily/react";
-import { composeEnum } from "../../utils/composeEnum";
+import { composeEnum } from "@utils/composeEnum";
 
 export const InputSchema: ISchema & { TextArea?: ISchema } = {
   type: "object",
@@ -60,7 +60,7 @@ export const InputSchema: ISchema & { TextArea?: ISchema } = {
       title: "尺寸",
       enum: composeEnum(
         ["large", "small", "middle", null!],
-        ["大", "小", "默认", "继承"]
+        ["大", "小", "默认", "继承"],
       ),
       "x-decorator": "FormItem",
       "x-component": "Select",

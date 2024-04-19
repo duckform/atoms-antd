@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Transfer as FormilyTransfer } from "@formily/antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { TransferSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewTransfer = FormilyTransfer;
 
@@ -35,6 +36,5 @@ const Resource: IResourceCreator[] = [
 export const Transfer = Object.assign(PreviewTransfer, {
   Behavior,
   Resource,
-  accepts: ["number", 'string'],
-  transform: () => { }
+  ...quick,
 });

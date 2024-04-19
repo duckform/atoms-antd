@@ -1,6 +1,6 @@
 import { ISchema } from "@formily/react";
 
 export const CheckboxSchema: ISchema = {
-  type: 'object',
+  type: "object",
   properties: {},
-}
+};

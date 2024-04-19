@@ -1,5 +1,5 @@
 import type { ISchema } from "@formily/react";
-import { composeEnum } from "../../utils/composeEnum";
+import { composeEnum } from "@utils/composeEnum";
 
 const CommonDatePickerAPI = {
   allowClear: {
@@ -65,7 +65,7 @@ const CommonDatePickerAPI = {
     title: "尺寸",
     enum: composeEnum(
       ["large", "small", "middle", null!],
-      ["大", "小", "默认", "继承"]
+      ["大", "小", "默认", "继承"],
     ),
     "x-decorator": "FormItem",
     "x-component": "Select",
@@ -92,7 +92,7 @@ export const DatePickerSchema: ISchema & { RangePicker?: ISchema } = {
       title: "选择器类型",
       enum: composeEnum(
         ["time", "date", "month", "year", "quarter", "decade"],
-        ["时间", "日期", "月份", "年", "季度", "财年"]
+        ["时间", "日期", "月份", "年", "季度", "财年"],
       ),
       "x-decorator": "FormItem",
       "x-component": "Select",
@@ -130,7 +130,7 @@ DatePickerSchema.RangePicker = {
       title: "选择器类型",
       enum: composeEnum(
         ["time", "date", "month", "year", "decade"],
-        ["时间", "日期", "月份", "年", "财年"]
+        ["时间", "日期", "月份", "年", "财年"],
       ),
       "x-decorator": "FormItem",
       "x-component": "Select",

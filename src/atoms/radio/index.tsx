@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Radio as FormilyRadio } from "@formily/antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { RadioSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewRadio = FormilyRadio;
 
@@ -40,6 +41,5 @@ const Resource: IResourceCreator[] = [
 export const Radio = Object.assign(PreviewRadio, {
   Behavior,
   Resource,
-  accepts: ["string", "number"],
-  transform: () => { }
+  ...quick,
 });

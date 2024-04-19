@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Rate as AntdRate } from "antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { RateSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewRate = AntdRate;
 
@@ -36,6 +37,5 @@ const Resource: IResourceCreator[] = [
 export const Rate = Object.assign(PreviewRate, {
   Behavior,
   Resource,
-  accepts: ["number"],
-  transform: () => { }
+  ...quick,
 });

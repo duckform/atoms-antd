@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Slider as AntdSlider } from "antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { SliderSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewSlider = AntdSlider;
 
@@ -36,6 +37,5 @@ const Resource: IResourceCreator[] = [
 export const Slider = Object.assign(PreviewSlider, {
   Behavior,
   Resource,
-  accepts: ["number"],
-  transform: () => { }
+  ...quick,
 });

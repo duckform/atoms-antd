@@ -1,4 +1,10 @@
-import { IBehaviorCreator, IResourceCreator, TreeNode, createBehavior, createResource } from "@duckform/core";
+import {
+  IBehaviorCreator,
+  IResourceCreator,
+  TreeNode,
+  createBehavior,
+  createResource,
+} from "@duckform/core";
 import {
   DnFC,
   DroppableWidget,
@@ -11,7 +17,7 @@ import React from "react";
 import { FormGridSchema } from "./schema";
 import "./styles.less";
 import { createFieldSchema } from "../field/schema";
-import { LoadTemplate } from "../../utils/LoadTemplate";
+import { LoadTemplate } from "@utils/LoadTemplate";
 
 type formilyGrid = typeof FormilyGird;
 
@@ -33,7 +39,7 @@ const PreviewFormGrid: DnFC<React.ComponentProps<formilyGrid>> & {
             onClick: () => {
               const column = new TreeNode({
                 componentName: "Field",
-                resourceName: '网格列',
+                resourceName: "网格列",
                 props: {
                   type: "void",
                   "x-component": "FormGrid.GridColumn",
@@ -102,48 +108,50 @@ const Behavior: IBehaviorCreator[] = [
   },
 ];
 
-const Resource: IResourceCreator[] = [{
-  title: "网格布局",
-  elements: [
-    {
-      componentName: "Field",
-      props: {
-        type: "void",
-        "x-component": "FormGrid",
+const Resource: IResourceCreator[] = [
+  {
+    title: "网格布局",
+    elements: [
+      {
+        componentName: "Field",
+        props: {
+          type: "void",
+          "x-component": "FormGrid",
+        },
+        children: [
+          {
+            componentName: "Field",
+            resourceName: "网格列",
+            props: {
+              type: "void",
+              "x-component": "FormGrid.GridColumn",
+            },
+          },
+          {
+            componentName: "Field",
+            resourceName: "网格列",
+            props: {
+              type: "void",
+              "x-component": "FormGrid.GridColumn",
+            },
+          },
+          {
+            componentName: "Field",
+            resourceName: "网格列",
+            props: {
+              type: "void",
+              "x-component": "FormGrid.GridColumn",
+            },
+          },
+        ],
       },
-      children: [
-        {
-          componentName: "Field",
-          resourceName: '网格列',
-          props: {
-            type: "void",
-            "x-component": "FormGrid.GridColumn",
-          },
-        },
-        {
-          componentName: "Field",
-          resourceName: '网格列',
-          props: {
-            type: "void",
-            "x-component": "FormGrid.GridColumn",
-          },
-        },
-        {
-          componentName: "Field",
-          resourceName: '网格列',
-          props: {
-            type: "void",
-            "x-component": "FormGrid.GridColumn",
-          },
-        },
-      ],
-    },
-  ],
-}];
+    ],
+  },
+];
 
 export const FormGrid = Object.assign(PreviewFormGrid, {
   Behavior,
   Resource,
   accepts: ["void"],
-  transform: () => { }
+  transform: () => {},
 });

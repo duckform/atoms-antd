@@ -1,6 +1,12 @@
 import { ISchema } from "@formily/react";
 
-export const ProArrayTableSchema: ISchema & { Addition?: ISchema; Column?: ISchema; Remove?: ISchema; ProAddition?: ISchema; DelegateAction?: ISchema; } = {
+export const ProArrayTableSchema: ISchema & {
+  Addition?: ISchema;
+  Column?: ISchema;
+  Remove?: ISchema;
+  ProAddition?: ISchema;
+  DelegateAction?: ISchema;
+} = {
   type: "object",
   properties: {
     bordered: {
@@ -14,7 +20,7 @@ export const ProArrayTableSchema: ISchema & { Addition?: ISchema; Column?: ISche
     },
     showHeader: {
       type: "boolean",
-      title: '显示头部',
+      title: "显示头部",
       "x-decorator": "FormItem",
       "x-component": "Switch",
       "x-component-props": {
@@ -62,7 +68,7 @@ export const ProArrayTableSchema: ISchema & { Addition?: ISchema; Column?: ISche
     },
     size: {
       type: "string",
-      title: '尺寸',
+      title: "尺寸",
       enum: [
         { label: "大", value: "large" },
         { label: "小", value: "small" },
@@ -76,7 +82,7 @@ export const ProArrayTableSchema: ISchema & { Addition?: ISchema; Column?: ISche
     },
     tableLayout: {
       type: "string",
-      title: '表格布局',
+      title: "表格布局",
       enum: [
         { label: "自动", value: "auto" },
         { label: "固定", value: "fixed" },
@@ -96,7 +102,7 @@ ProArrayTableSchema.DelegateAction = {
   properties: {
     okText: {
       type: "string",
-      title: '确定文案',
+      title: "确定文案",
       "x-decorator": "FormItem",
       "x-component": "Input",
       default: "保存",
@@ -122,7 +128,7 @@ ProArrayTableSchema.Column = {
     },
     align: {
       type: "string",
-      title: '内容对齐',
+      title: "内容对齐",
       enum: [
         { label: "左", value: "left" },
         { label: "右", value: "right" },
@@ -137,13 +143,13 @@ ProArrayTableSchema.Column = {
     },
     colSpan: {
       type: "number",
-      title: '跨列',
+      title: "跨列",
       "x-decorator": "FormItem",
       "x-component": "NumberPicker",
     },
     width: {
       type: "number",
-      title: '宽度',
+      title: "宽度",
       "x-decorator": "FormItem",
       "x-component": "NumberPicker",
     },
@@ -153,7 +159,7 @@ ProArrayTableSchema.Column = {
       enum: [
         { label: "左", value: "left" },
         { label: "右", value: "right" },
-        { label: '无', value: false },
+        { label: "无", value: false },
       ],
       "x-decorator": "FormItem",
       "x-component": "Radio.Group",
@@ -169,7 +175,7 @@ ProArrayTableSchema.ProAddition = {
   properties: {
     okText: {
       type: "string",
-      title: '确定文案',
+      title: "确定文案",
       "x-decorator": "FormItem",
       "x-component": "Input",
       default: "创建",
@@ -189,7 +195,7 @@ ProArrayTableSchema.Addition = {
   properties: {
     method: {
       type: "string",
-      title: '方法',
+      title: "方法",
       enum: ["push", "unshift"],
       "x-decorator": "FormItem",
       "x-component": "Radio.Group",
@@ -200,7 +206,7 @@ ProArrayTableSchema.Addition = {
     },
     defaultValue: {
       type: "string",
-      title: '默认值',
+      title: "默认值",
       "x-decorator": "FormItem",
       "x-component": "ValueInput",
     },

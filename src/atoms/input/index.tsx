@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Input as FormilyInput } from "@formily/antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { InputSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewInput = FormilyInput;
 
@@ -58,6 +59,5 @@ const Resource: IResourceCreator[] = [
 export const Input = Object.assign(PreviewInput, {
   Behavior,
   Resource,
-  accepts: ["string", "number"],
-  transform: () => { }
+  ...quick,
 });

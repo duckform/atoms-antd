@@ -1,24 +1,23 @@
+import { createFieldSchema, createVoidFieldSchema } from "@basic/field/schema";
 import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import {
   DnFC,
   DroppableWidget,
   TreeNodeWidget,
-  useDesigner,
   useNodeIdProps,
   useTreeNode,
 } from "@duckform/react";
 import { observer } from "@formily/react";
-import { Space, Table, TableProps } from "antd";
+import { Flex } from "@pro.formily/antd/dist/esm/pro-array-table/mixin.pro";
+import { LoadTemplate } from "@utils/LoadTemplate";
+import { Table, TableProps } from "antd";
 import cls from "classnames";
-import React, { useEffect, useRef } from "react";
-import { LoadTemplate } from "../../utils/LoadTemplate";
-import { useDropTemplate } from "../../hooks";
-import { createFieldSchema, createVoidFieldSchema } from "@basic/field/schema";
-import { actions, dropTemplate, init, query, shadowHelper } from "./helper";
+import React, { useEffect } from "react";
+import { useDropTemplate } from "@hooks/useDropTemplate";
+import { actions, init, query } from "./helper";
+import { mixin } from "./mixin";
 import { ProArrayTableSchema } from "./schema";
 import "./styles.less";
-import { mixin } from "./mixin";
-import { Flex } from "@pro.formily/antd/dist/esm/pro-array-table/mixin.pro";
 
 const HeaderCell: React.FC = (props: any) => {
   return (
@@ -130,22 +129,22 @@ const PreviewProArrayTable: DnFC<TableProps<any>> = observer((props) => {
       <LoadTemplate
         actions={[
           {
-            title: '添加排序',
+            title: "添加排序",
             icon: "AddSort",
             onClick: () => actions.addSort(node),
           },
           {
-            title: '添加索引',
+            title: "添加索引",
             icon: "AddIndex",
             onClick: () => actions.addIndex(node),
           },
           {
-            title: '添加列',
+            title: "添加列",
             icon: "AddColumn",
             onClick: () => actions.addColumn(node),
           },
           {
-            title: '添加操作',
+            title: "添加操作",
             icon: "AddOperation",
             onClick: () => actions.addOp(node),
           },
@@ -254,24 +253,26 @@ const Behavior: IBehaviorCreator[] = [
   },
 ];
 
-const Resource: IResourceCreator[] = [{
-  title: "自增表格",
-  elements: [
-    {
-      componentName: "Field",
+const Resource: IResourceCreator[] = [
+  {
+    title: "自增表格",
+    elements: [
+      {
+        componentName: "Field",
 
-      props: {
-        type: "array",
-        "x-decorator": "FormItem",
-        "x-component": "ProArrayTable",
+        props: {
+          type: "array",
+          "x-decorator": "FormItem",
+          "x-component": "ProArrayTable",
+        },
       },
-    },
-  ],
-}];
+    ],
+  },
+];
 
 export const ProArrayTable = Object.assign(PreviewProArrayTable, {
   Behavior,
   Resource,
   accepts: ["void"],
-  transform: () => { }
+  transform: () => {},
 });

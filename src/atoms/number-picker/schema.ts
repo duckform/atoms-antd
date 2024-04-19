@@ -1,5 +1,5 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from "../../utils/composeEnum";
+import { composeEnum } from "@utils/composeEnum";
 
 export const NumberPickerSchema: ISchema = {
   type: "object",
@@ -45,7 +45,7 @@ export const NumberPickerSchema: ISchema = {
       title: "尺寸",
       enum: composeEnum(
         ["large", "small", "middle", null!],
-        ["大", "小", "默认", "继承"]
+        ["大", "小", "默认", "继承"],
       ),
       "x-decorator": "FormItem",
       "x-component": "Select",
@@ -72,7 +72,8 @@ export const NumberPickerSchema: ISchema = {
         include: ["EXPRESSION"],
       },
       "x-decorator-props": {
-        tooltip: "指定从 格式转换器 里转换回数字的方式，和 格式转换器 搭配使用,格式：function(string): number",
+        tooltip:
+          "指定从 格式转换器 里转换回数字的方式，和 格式转换器 搭配使用,格式：function(string): number",
       },
     },
     stringMode: {

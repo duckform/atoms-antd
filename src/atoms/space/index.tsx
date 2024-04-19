@@ -4,6 +4,7 @@ import { createVoidFieldSchema } from "@basic/field/schema";
 import { DnFC } from "@duckform/react";
 import { SpaceSchema } from "./schema";
 import { withContainer } from "../../utils/Container";
+import { quick } from "./quick";
 
 const PreviewSpace: DnFC<React.ComponentProps<typeof FormilySpace>> =
   withContainer(FormilySpace);
@@ -39,6 +40,5 @@ const Resource: IResourceCreator[] = [
 export const Space = Object.assign(PreviewSpace, {
   Behavior,
   Resource,
-  accepts: [],
-  transform: () => { }
+  ...quick,
 });

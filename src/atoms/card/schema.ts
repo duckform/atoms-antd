@@ -1,7 +1,7 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from "@formily/react";
 
 export const CardSchema: ISchema & { Addition?: ISchema } = {
-  type: 'object',
+  type: "object",
   properties: {
     title: {
       type: "string",
@@ -39,4 +39,4 @@ export const CardSchema: ISchema & { Addition?: ISchema } = {
       },
     },
   },
-}
+};

@@ -99,7 +99,7 @@ const DelegateAction = DesignModal;
 
 // biome-ignore lint/complexity/noUselessTypeConstraint: <explanation>
 export const mixin = <T extends any>(o: T) => {
-  return Object.assign(o, {
+  return Object.assign(o as any, {
     SortHandle,
     Index,
     Addition,

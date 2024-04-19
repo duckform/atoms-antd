@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { Password as FormilyPassword } from "@formily/antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { PasswordSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewPassword = FormilyPassword;
 
@@ -36,6 +37,5 @@ const Resource: IResourceCreator[] = [
 export const Password = Object.assign(PreviewPassword, {
   Behavior,
   Resource,
-  accepts: ["string", "number"],
-  transform: () => { }
+  ...quick,
 });

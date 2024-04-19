@@ -2,6 +2,7 @@ import { IBehaviorCreator, IResourceCreator } from "@duckform/core";
 import { NumberPicker as FormilyNumberPicker } from "@formily/antd";
 import { createFieldSchema } from "@basic/field/schema";
 import { NumberPickerSchema } from "./schema";
+import { quick } from "./quick";
 
 const PreviewNumberPicker = FormilyNumberPicker;
 
@@ -36,6 +37,5 @@ const Resource: IResourceCreator[] = [
 export const NumberPicker = Object.assign(PreviewNumberPicker, {
   Behavior,
   Resource,
-  accepts: ["number"],
-  transform: () => { }
+  ...quick,
 });

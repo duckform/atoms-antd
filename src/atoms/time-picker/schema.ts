@@ -1,5 +1,5 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from "../../utils/composeEnum";
+import { composeEnum } from "@utils/composeEnum";
 
 export const CommonTimePickerAPI = {
   allowClear: {
@@ -118,7 +118,7 @@ export const CommonTimePickerAPI = {
     title: "尺寸",
     enum: composeEnum(
       ["large", "small", "middle", null!],
-      ["大", "小", "默认", "继承"]
+      ["大", "小", "默认", "继承"],
     ),
     "x-decorator": "FormItem",
     "x-component": "Select",

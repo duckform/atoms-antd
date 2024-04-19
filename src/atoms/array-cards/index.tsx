@@ -1,4 +1,10 @@
-import { IBehaviorCreator, IResourceCreator, TreeNode, createResource } from "@duckform/core";
+import { createFieldSchema, createVoidFieldSchema } from "@basic/field/schema";
+import {
+  IBehaviorCreator,
+  IResourceCreator,
+  TreeNode,
+  createResource,
+} from "@duckform/core";
 import {
   DnFC,
   DroppableWidget,
@@ -8,20 +14,20 @@ import {
 } from "@duckform/react";
 import { ArrayBase as AntdArrayBase } from "@formily/antd";
 import { observer } from "@formily/react";
-import { Card, CardProps } from "antd";
-import cls from "classnames";
-import React, { Fragment } from "react";
-import { LoadTemplate } from "../../utils/LoadTemplate";
-import { useDropTemplate } from "../../hooks";
-import { ArrayCardsSchema } from "./schema";
+import { LoadTemplate } from "@utils/LoadTemplate";
 import {
   createEnsureTypeItemsNode,
   createNodeId,
   findNodeByComponentPath,
   hasNodeByComponentPath,
   queryNodesByComponentPath,
-} from "../../utils/shared";
-import { createVoidFieldSchema, createFieldSchema } from "@basic/field/schema";
+} from "@utils/shared";
+import { Card, CardProps } from "antd";
+import cls from "classnames";
+import { Fragment } from "react";
+import { useDropTemplate } from "@hooks/useDropTemplate";
+import { quick } from "./quick";
+import { ArrayCardsSchema } from "./schema";
 import "./styles.less";
 
 const ArrayBase = AntdArrayBase as Required<typeof AntdArrayBase> &
@@ -160,7 +166,7 @@ const PreviewArrayCards: DnFC<CardProps> = observer((props) => {
       <LoadTemplate
         actions={[
           {
-            title: '添加索引',
+            title: "添加索引",
             icon: "AddIndex",
             onClick: () => {
               if (
@@ -183,7 +189,7 @@ const PreviewArrayCards: DnFC<CardProps> = observer((props) => {
           },
 
           {
-            title: '添加操作',
+            title: "添加操作",
             icon: "AddOperation",
             onClick: () => {
               const oldAdditionNode = findNodeByComponentPath(node, [
@@ -259,70 +265,72 @@ const PreviewArrayCards: DnFC<CardProps> = observer((props) => {
 
 ArrayBase.mixin(PreviewArrayCards);
 
-const Behavior: IBehaviorCreator[] = [{
-  name: 'ArrayCards',
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayCards',
-  designerProps: {
-    droppable: true,
-    propsSchema: createFieldSchema(ArrayCardsSchema),
-  },
-},
-{
-  name: 'ArrayCards.Addition',
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayCards.Addition',
-  designerProps: {
-    allowDrop(parent) {
-      return parent.props?.["x-component"] === 'ArrayCards';
+const Behavior: IBehaviorCreator[] = [
+  {
+    name: "ArrayCards",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayCards",
+    designerProps: {
+      droppable: true,
+      propsSchema: createFieldSchema(ArrayCardsSchema),
     },
-    propsSchema: createVoidFieldSchema(ArrayCardsSchema.Addition),
   },
-},
-{
-  name: 'ArrayCards.Remove',
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayCards.Remove',
-  designerProps: {
-    allowDrop(parent) {
-      return parent.props?.["x-component"] === 'ArrayCards';
+  {
+    name: "ArrayCards.Addition",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayCards.Addition",
+    designerProps: {
+      allowDrop(parent) {
+        return parent.props?.["x-component"] === "ArrayCards";
+      },
+      propsSchema: createVoidFieldSchema(ArrayCardsSchema.Addition),
     },
-    propsSchema: createVoidFieldSchema(),
   },
-},
-{
-  name: 'ArrayCards.Index',
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayCards.Index',
-  designerProps: {
-    allowDrop(parent) {
-      return parent.props?.["x-component"] === 'ArrayCards';
+  {
+    name: "ArrayCards.Remove",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayCards.Remove",
+    designerProps: {
+      allowDrop(parent) {
+        return parent.props?.["x-component"] === "ArrayCards";
+      },
+      propsSchema: createVoidFieldSchema(),
     },
-    propsSchema: createVoidFieldSchema(),
   },
-},
-{
-  name: 'ArrayCards.MoveUp',
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayCards.MoveUp',
-  designerProps: {
-    allowDrop(parent) {
-      return parent.props?.["x-component"] === 'ArrayCards';
+  {
+    name: "ArrayCards.Index",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayCards.Index",
+    designerProps: {
+      allowDrop(parent) {
+        return parent.props?.["x-component"] === "ArrayCards";
+      },
+      propsSchema: createVoidFieldSchema(),
     },
-    propsSchema: createVoidFieldSchema(),
   },
-},
-{
-  name: 'ArrayCards.MoveDown',
-  extends: ["Field"],
-  selector: (node) => node.props?.["x-component"] === 'ArrayCards.MoveDown',
-  designerProps: {
-    allowDrop(parent) {
-      return parent.props?.["x-component"] === "ArrayCards";
+  {
+    name: "ArrayCards.MoveUp",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayCards.MoveUp",
+    designerProps: {
+      allowDrop(parent) {
+        return parent.props?.["x-component"] === "ArrayCards";
+      },
+      propsSchema: createVoidFieldSchema(),
     },
-    propsSchema: createVoidFieldSchema(),
   },
-},];
+  {
+    name: "ArrayCards.MoveDown",
+    extends: ["Field"],
+    selector: (node) => node.props?.["x-component"] === "ArrayCards.MoveDown",
+    designerProps: {
+      allowDrop(parent) {
+        return parent.props?.["x-component"] === "ArrayCards";
+      },
+      propsSchema: createVoidFieldSchema(),
+    },
+  },
+];
 
 const Resource: IResourceCreator[] = createResource({
   title: "自增卡片",
@@ -341,10 +349,8 @@ const Resource: IResourceCreator[] = createResource({
   ],
 });
 
-
 export const ArrayCards = Object.assign(PreviewArrayCards, {
   Behavior,
   Resource,
-  accepts: ["array"],
-  transform: () => { }
+  ...quick,
 });

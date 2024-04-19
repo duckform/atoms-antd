@@ -1,8 +1,8 @@
 import { ISchema } from "@formily/react";
-import { composeEnum } from '../../utils/composeEnum';
+import { composeEnum } from "@utils/composeEnum";
 
 export const SelectSchema: ISchema = {
-  type: 'object',
+  type: "object",
   properties: {
     // enum: {
     //   type: "string",
@@ -13,10 +13,7 @@ export const SelectSchema: ISchema = {
     mode: {
       type: "string",
       title: "模式",
-      enum: composeEnum(
-        ["multiple", "tags", null!],
-        ["多选", "标签", "单选"]
-      ),
+      enum: composeEnum(["multiple", "tags", null!], ["多选", "标签", "单选"]),
       "x-decorator": "FormItem",
       "x-component": "Radio.Group",
       "x-component-props": {
@@ -40,7 +37,7 @@ export const SelectSchema: ISchema = {
       },
       "x-decorator-props": {
         tooltip: "仅在多选或者标签模式下支持",
-      }
+      },
     },
     dropdownMatchSelectWidth: {
       type: "boolean",
@@ -51,8 +48,9 @@ export const SelectSchema: ISchema = {
         defaultChecked: true,
       },
       "x-decorator-props": {
-        tooltip: "默认将设置 min-width，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动",
-      }
+        tooltip:
+          "默认将设置 min-width，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动",
+      },
     },
     autoFocus: {
       type: "boolean",
@@ -90,8 +88,9 @@ export const SelectSchema: ISchema = {
       "x-decorator": "FormItem",
       "x-component": "Switch",
       "x-decorator-props": {
-        tooltip: "是否把每个选项的 label 包装到 value 中，会把 Select 的 value 类型从 string 变为 { value: string, label: ReactNode } 的格式",
-      }
+        tooltip:
+          "是否把每个选项的 label 包装到 value 中，会把 Select 的 value 类型从 string 变为 { value: string, label: ReactNode } 的格式",
+      },
     },
     showArrow: {
       type: "boolean",
@@ -148,7 +147,7 @@ export const SelectSchema: ISchema = {
       "x-component": "NumberPicker",
       "x-decorator-props": {
         tooltip: "最多显示多少个 tag，响应式模式会对性能产生损耗",
-      }
+      },
     },
     maxTagPlaceholder: {
       type: "string",
@@ -157,7 +156,7 @@ export const SelectSchema: ISchema = {
       "x-component": "Input",
       "x-decorator-props": {
         tooltip: "隐藏 tag 时显示的内容",
-      }
+      },
     },
     maxTagTextLength: {
       type: "number",
@@ -186,7 +185,7 @@ export const SelectSchema: ISchema = {
       title: "尺寸",
       enum: composeEnum(
         ["large", "small", "middle", null!],
-        ["大", "小", "默认", "继承"]
+        ["大", "小", "默认", "继承"],
       ),
       "x-decorator": "FormItem",
       "x-component": "Select",
@@ -195,4 +194,4 @@ export const SelectSchema: ISchema = {
       },
     },
   },
-}
+};
