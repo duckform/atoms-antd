@@ -1,6 +1,6 @@
 {
   "name": "@duckform/atoms-antd",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "scripts": {
     "prebuild": "bun run ./script/buildinfo.ts",
     "dev": "npx rsbuild dev",
