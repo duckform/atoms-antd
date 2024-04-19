@@ -9,9 +9,7 @@ export default defineConfig({
       "src/info": {
         name: "DuckFormAtoms.Info",
       },
-      "src/atoms/input": {
-        name: "DuckFormAtoms.Input",
-      },
+      // AUTO BY SCRIPTS,
     },
     extractCSS: true,
     externals: {
