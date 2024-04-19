@@ -10,3 +10,4 @@
 **Full Changelog**: https://github.com/duckform/atoms-antd/compare/v0.1.0-alpha.2...v0.1.0-alpha.3
 **Full Changelog**: https://github.com/duckform/atoms-antd/compare/v0.1.0-alpha.3...v0.1.0-alpha.4
 **Full Changelog**: https://github.com/duckform/atoms-antd/compare/v0.1.0-alpha.4...v0.1.0-alpha.5
+**Full Changelog**: https://github.com/duckform/atoms-antd/compare/v0.1.0-alpha.5...v0.1.0-alpha.6
