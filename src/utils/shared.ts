@@ -38,7 +38,8 @@ export const makeTransfomer = (
       const changed = getNodeProps(node, "x-component") === CompName;
       if (!changed) return node;
       const props = node.props!["x-components-props"];
-      node.props!["x-components-props"] = { ...props._memo };
+      const _memo = props?._memo ?? {};
+      node.props!["x-components-props"] = { ..._memo };
       return node;
     },
   };
