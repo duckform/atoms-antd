@@ -18,6 +18,7 @@ import { actions, init, query } from "./helper";
 import { mixin } from "./mixin";
 import { ProArrayTableSchema } from "./schema";
 import "./styles.less";
+import { quick } from "./quick";
 
 const HeaderCell: React.FC = (props: any) => {
   return (
@@ -255,7 +256,7 @@ const Behavior: IBehaviorCreator[] = [
 
 const Resource: IResourceCreator[] = [
   {
-    title: "自增表格",
+    title: "高级表格",
     elements: [
       {
         componentName: "Field",
@@ -273,6 +274,5 @@ const Resource: IResourceCreator[] = [
 export const ProArrayTable = Object.assign(PreviewProArrayTable, {
   Behavior,
   Resource,
-  accepts: ["void"],
-  transform: () => {},
+  ...quick,
 });

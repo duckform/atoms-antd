@@ -3,6 +3,7 @@ import { FormLayout as FormilyFormLayout } from "@formily/antd";
 import { createVoidFieldSchema } from "@basic/field/schema";
 import { FormLayoutSchema } from "./schema";
 import { DroppableWidget } from "@duckform/react";
+import { quick } from "./quick";
 
 const PreviewFormLayout = (
   props: React.PropsWithChildren<
@@ -42,5 +43,5 @@ const Resource: IResourceCreator = {
 export const FormLayout = Object.assign(PreviewFormLayout, {
   Behavior,
   Resource,
-  accepts: ["object", "void"],
+  ...quick,
 });

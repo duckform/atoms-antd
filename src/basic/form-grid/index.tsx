@@ -18,6 +18,7 @@ import { FormGridSchema } from "./schema";
 import "./styles.less";
 import { createFieldSchema } from "../field/schema";
 import { LoadTemplate } from "@utils/LoadTemplate";
+import { quick } from "./quick";
 
 type formilyGrid = typeof FormilyGird;
 
@@ -152,6 +153,5 @@ const Resource: IResourceCreator[] = [
 export const FormGrid = Object.assign(PreviewFormGrid, {
   Behavior,
   Resource,
-  accepts: ["void"],
-  transform: () => {},
+  ...quick,
 });
